@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Arcade Coach — Case Study</title>
+  <meta name="description" content="Case study pentru Access Arcade Coach: problemă, concept, UX decisions, accesibilitate, module și impact de portofoliu." />
+  <style>
+    :root{--bg:#0a1222;--panel:#121f36;--text:#edf4ff;--muted:#9db0cf;--line:rgba(255,255,255,.12);--brand:#6ea8ff;--brand2:#8b5cf6;--accent:#25d0ab;--radius:24px;--shadow:0 20px 64px rgba(0,0,0,.28)}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--bg),#050b15)}
+    .container{width:min(100% - 24px,1080px);margin:0 auto}
+    .hero{padding:34px 0 18px}.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card,.sec{padding:20px}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+    h1{margin:10px 0 12px;font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.04;letter-spacing:-.04em} h2{margin:0 0 10px;font-size:clamp(1.2rem,2.1vw,1.9rem)}
+    .muted{color:var(--muted)} .grid2,.grid3{display:grid;gap:14px}.grid2{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(3,1fr)} .section{padding:12px 0}
+    .tag{display:inline-flex;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.84rem}
+    ul{margin:0;padding-left:18px;color:var(--muted)}
+    a{color:inherit}
+    @media (max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <article class="card hero-card">
+        <div class="eyebrow">Case Study</div>
+        <h1>Access Arcade Coach</h1>
+        <p class="muted">Un concept flagship care combină energia gamificată din ARCADE OPS, logica de simulator educațional și accesibilitatea din BACapp, plus mood check-in, task list, focus timer și coach local din Coaching-AI.</p>
+        <p><a href="index.html">← Înapoi la aplicație</a> · <a href="login.html">Vezi login mock</a></p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="grid2">
+        <article class="card sec">
+          <h2>01. Problema</h2>
+          <p class="muted">Multe aplicații educaționale sau de productivitate ignoră nevoile reale de claritate, ritm controlat și personalizare pentru utilizatori cu dizabilități. Accentul cade pe volum, nu pe orientare.</p>
+        </article>
+        <article class="card sec">
+          <h2>02. Concept</h2>
+          <p class="muted">Proiectul propune un hub accesibil care unește rutină, studiu, coach local și feedback calm. Nu concurează prin complexitate tehnică invizibilă, ci prin structură, UX și coerență de produs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid3">
+        <article class="card sec">
+          <h2>03. Ce am combinat</h2>
+          <ul>
+            <li>Hub gamificat, onboarding și layered presentation</li>
+            <li>Trasee educaționale, quiz și progres local</li>
+            <li>Mood check-in, task list, focus timer și coach local</li>
+          </ul>
+        </article>
+        <article class="card sec">
+          <h2>04. Decizii UX</h2>
+          <ul>
+            <li>workspace cu tab-uri pentru reducerea aglomerării</li>
+            <li>CTA-uri mari și ierarhie clară</li>
+            <li>feedback calm în loc de penalizare agresivă</li>
+          </ul>
+        </article>
+        <article class="card sec">
+          <h2>05. Decizii A11y</h2>
+          <ul>
+            <li>RO/EN</li>
+            <li>dark / light / high contrast</li>
+            <li>font resize și reduced motion</li>
+            <li>local persistence pentru predictibilitate</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid2">
+        <article class="card sec">
+          <h2>06. Mandala Calm</h2>
+          <p class="muted">Am adăugat un modul vizual de reglare și focus, bazat pe simetrie, ritm lent și interacțiuni simple. Rolul lui este să funcționeze ca micro-pauză terapeutică și cognitivă, nu ca joc competitiv.</p>
+        </article>
+        <article class="card sec">
+          <h2>07. Scratch Lab</h2>
+          <p class="muted">Am adăugat o zonă creativă inspirată de logica block-based, unde utilizatorul poate compune secvențe simple și primi idei de storytelling sau dialog. Asta extinde proiectul dincolo de rutină și studiu, spre expresivitate și joc creativ.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="card sec">
+        <h2>08. Module principale</h2>
+        <div class="grid2">
+          <div>
+            <span class="tag">Workspace</span>
+            <p class="muted">Task board, paths, coach și analytics în același flow, fără fragmentare inutilă.</p>
+          </div>
+          <div>
+            <span class="tag">Accessibility Center</span>
+            <p class="muted">Un loc unic pentru toate setările relevante, astfel încât utilizatorul să nu fie obligat să caute prin interfață.</p>
+          </div>
+          <div>
+            <span class="tag">Extended Quiz</span>
+            <p class="muted">Întrebări scurte, claritate, feedback explicat și progres vizibil.</p>
+          </div>
+          <div>
+            <span class="tag">Coach Local</span>
+            <p class="muted">Răspunsuri rule-based rapide, orientate pe autonomie și pe următorul pas clar.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="grid2">
+        <article class="card sec">
+          <h2>09. De ce funcționează pentru portofoliu</h2>
+          <p class="muted">Proiectul arată product thinking, UX strategy, front-end architecture în variantă statică și o înțelegere bună a accesibilității practice, nu doar declarative.</p>
+        </article>
+        <article class="card sec">
+          <h2>10. Ce transmite recruiterului</h2>
+          <p class="muted">Că poți lua trei direcții diferite și le poți uni într-un concept coerent, cu structură, logică de module, poziționare clară și presentation layer bun.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
