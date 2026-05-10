@@ -3,457 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Access Arcade Coach Premium — RO/EN · Accessible gamified learning app</title>
-  <meta name="description" content="Aplicație accesibilă premium inspirată din ARCADE OPS, BACapp și Coaching-AI: onboarding, quiz real, coach local, dark mode, RO/EN și mobile-first." />
+  <title>Access Arcade Coach — Flagship App</title>
+  <meta name="description" content="Aplicație flagship accesibilă inspirată din ARCADE OPS, BACapp și Coaching-AI: dashboard, onboarding, workspace, quiz, coach local, profile de accesibilitate și RO/EN." />
   <meta name="theme-color" content="#08111f" />
   <style>
     :root{
-      --bg:#07111f;
-      --bg-2:#0c1730;
-      --panel:#12203a;
-      --panel-2:#172846;
-      --panel-3:#0f1a2d;
-      --text:#eff4ff;
-      --muted:#a6b6d2;
-      --line:rgba(255,255,255,.12);
-      --brand:#6ea8ff;
-      --brand-2:#8b5cf6;
-      --accent:#27d3ad;
-      --warning:#ffbf69;
-      --danger:#ff7c8f;
-      --success:#3ddc97;
-      --shadow:0 22px 70px rgba(0,0,0,.28);
-      --radius:24px;
-      --radius-sm:18px;
-      --focus:0 0 0 3px rgba(110,168,255,.44);
-      --font-size:16px;
-      --motion:1;
-      --container:1180px;
-      --glass:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-    }
-
-    body[data-theme="light"]{
-      --bg:#f4f7ff;
-      --bg-2:#edf3ff;
-      --panel:#ffffff;
-      --panel-2:#eef3ff;
-      --panel-3:#f8fbff;
-      --text:#0f213f;
-      --muted:#5c6c88;
-      --line:rgba(16,32,61,.12);
-      --brand:#355cfc;
-      --brand-2:#7c3aed;
-      --accent:#119b78;
-      --warning:#b96d14;
-      --danger:#c13c55;
-      --success:#0f9f77;
-      --shadow:0 16px 44px rgba(27,42,82,.12);
-      --focus:0 0 0 3px rgba(53,92,252,.2);
-      --glass:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92));
-    }
-
-    body[data-contrast="high"]{
-      --line:rgba(255,255,255,.24);
-    }
-    body[data-theme="light"][data-contrast="high"]{
-      --line:rgba(16,32,61,.22);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size:var(--font-size);
-      line-height:1.56;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 0% 0%, rgba(110,168,255,.18), transparent 26%),
-        radial-gradient(circle at 100% 0%, rgba(139,92,246,.14), transparent 24%),
-        linear-gradient(180deg, var(--bg), #050b15 100%);
+      --bg:#07111f; --bg2:#0b1730; --panel:#12203a; --panel2:#182847; --text:#eef4ff; --muted:#9db0cf;
+      --line:rgba(255,255,255,.12); --brand:#6ea8ff; --brand2:#8b5cf6; --accent:#25d0ab; --success:#39d58f;
+      --warning:#ffbf69; --danger:#ff7c90; --radius:26px; --shadow:0 20px 64px rgba(0,0,0,.28); --font-size:16px; --motion:1;
+      --container:1220px; --glass:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
     }
     body[data-theme="light"]{
-      background:
-        radial-gradient(circle at 0% 0%, rgba(110,168,255,.16), transparent 24%),
-        radial-gradient(circle at 100% 0%, rgba(124,58,237,.08), transparent 22%),
-        linear-gradient(180deg, var(--bg), var(--bg-2) 100%);
+      --bg:#f4f7ff; --bg2:#ecf2ff; --panel:#fff; --panel2:#eef3ff; --text:#10213f; --muted:#5c6c88;
+      --line:rgba(16,32,61,.12); --brand:#355cfc; --brand2:#7c3aed; --accent:#0f9d77; --success:#0f9d77;
+      --glass:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92)); --shadow:0 15px 40px rgba(28,46,89,.12);
     }
-
-    a{color:inherit}
-    button,input,textarea,select{font:inherit;color:inherit}
-    button,a,input,textarea,select,summary{outline:none}
-    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{
-      box-shadow:var(--focus);
-      border-radius:16px;
-    }
-    [hidden]{display:none !important}
-
-    .skip-link{
-      position:absolute;left:12px;top:-60px;z-index:999;
-      background:var(--brand);color:white;text-decoration:none;
-      padding:10px 14px;border-radius:999px;font-weight:800;
-    }
+    body[data-contrast="high"]{ --line:rgba(255,255,255,.24); }
+    body[data-theme="light"][data-contrast="high"]{ --line:rgba(16,32,61,.22); }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,sans-serif;font-size:var(--font-size);line-height:1.56;color:var(--text);background:
+      radial-gradient(circle at 0% 0%, rgba(110,168,255,.18), transparent 25%),
+      radial-gradient(circle at 100% 0%, rgba(139,92,246,.14), transparent 22%),
+      linear-gradient(180deg, var(--bg), #050b15 100%);}
+    body[data-theme="light"]{background:
+      radial-gradient(circle at 0% 0%, rgba(110,168,255,.16), transparent 24%),
+      radial-gradient(circle at 100% 0%, rgba(124,58,237,.08), transparent 20%),
+      linear-gradient(180deg, var(--bg), var(--bg2) 100%);}
+    a{color:inherit} button,input,textarea,select{font:inherit;color:inherit}
+    [hidden]{display:none!important}
+    .skip-link{position:absolute;left:12px;top:-60px;z-index:999;padding:10px 14px;background:var(--brand);color:#fff;text-decoration:none;border-radius:999px;font-weight:800}
     .skip-link:focus{top:12px}
-
-    .container{
-      width:min(100% - 24px, var(--container));
-      margin:0 auto;
-    }
-
-    .topbar{
-      position:sticky;top:0;z-index:60;
-      backdrop-filter:blur(14px);
-      background:rgba(8,16,30,.76);
-      border-bottom:1px solid var(--line);
-    }
-    body[data-theme="light"] .topbar{background:rgba(255,255,255,.8)}
-    .topbar-inner{
-      width:min(100% - 20px, var(--container));
-      margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;
-      gap:12px;flex-wrap:wrap;padding:12px 0;
-    }
-
-    .brand{
-      display:flex;align-items:center;gap:12px;min-width:0;
-    }
-    .brand-mark{
-      width:46px;height:46px;border-radius:16px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      box-shadow:var(--shadow);font-weight:900;letter-spacing:.08em;color:white;
-    }
-    .brand-copy{min-width:0}
-    .eyebrow{
-      color:var(--accent);font-weight:800;font-size:.82rem;
-      text-transform:uppercase;letter-spacing:.08em;
-    }
-    .brand-copy strong{
-      display:block;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-    }
-
-    .top-actions{
-      display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-    }
-
-    .btn,.nav-pill,.toggle{
-      min-height:42px;padding:10px 14px;border-radius:999px;
-      border:1px solid var(--line);background:rgba(255,255,255,.03);
-      color:var(--text);text-decoration:none;cursor:pointer;
-      transition:transform .18s ease,border-color .18s ease,background .18s ease;
-    }
-    .btn:hover,.nav-pill:hover,.toggle:hover{transform:translateY(-1px);border-color:rgba(110,168,255,.5)}
-    .btn-primary{
-      background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      color:white;border:none;font-weight:800;
-    }
-
-    .hero{padding:28px 0 16px}
-    .hero-grid{
-      display:grid;grid-template-columns:1.18fr .82fr;gap:18px;align-items:stretch;
-    }
-
-    .card{
-      background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
-    }
-
-    .hero-main{padding:24px;position:relative;overflow:hidden;isolation:isolate}
-    .hero-main::before{
-      content:"";position:absolute;inset:auto -12% -24% auto;width:260px;height:260px;border-radius:50%;
-      background:radial-gradient(circle, rgba(110,168,255,.28), transparent 60%);
-      opacity:calc(.8 * var(--motion));z-index:-1;
-    }
-
-    h1{
-      margin:10px 0 14px;font-size:clamp(1.9rem,4.2vw,3.5rem);
-      line-height:1.04;letter-spacing:-.04em;
-    }
-    .lead{font-size:1.05rem;color:var(--muted);max-width:66ch}
-    .hero-actions,.stack-actions,.row-actions{
-      display:flex;gap:10px;flex-wrap:wrap;
-    }
-
-    .hero-stats{
-      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px;
-    }
-    .mini{
-      border:1px solid var(--line);border-radius:18px;padding:14px;background:rgba(255,255,255,.03);
-    }
-    .mini strong{display:block;font-size:1.28rem;margin-bottom:4px}
-
-    .stack{
-      display:grid;gap:14px;
-    }
-    .panel{
-      padding:18px;
-    }
-
-    .section{padding:12px 0}
-    .section-head{
-      display:flex;align-items:end;justify-content:space-between;gap:12px;
-      flex-wrap:wrap;margin:10px 0 14px;
-    }
-    .section-head h2{margin:0;font-size:clamp(1.25rem,2.3vw,2rem)}
-    .muted{color:var(--muted)}
-    .small{font-size:.92rem}
-    .tiny{font-size:.82rem}
-
-    .grid-4,.grid-3,.grid-2{
-      display:grid;gap:14px;
-    }
-    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-
-    .kpi{
-      min-height:146px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;
-    }
-    .kpi .label{color:var(--muted);font-size:.92rem}
-    .kpi strong{font-size:2rem;line-height:1;margin:8px 0 4px;display:block}
-
-    .progress{
-      width:100%;height:12px;border-radius:999px;overflow:hidden;
-      background:rgba(255,255,255,.07);border:1px solid var(--line);
-    }
-    body[data-theme="light"] .progress{background:rgba(16,32,61,.05)}
-    .progress > span{
-      display:block;height:100%;width:0;border-radius:inherit;
-      background:linear-gradient(90deg,var(--accent),var(--brand));
-      transition:width .45s ease;
-    }
-
-    .pill-row,.tag-row{
-      display:flex;gap:8px;flex-wrap:wrap;
-    }
-    .pill,.tag{
-      padding:6px 10px;border-radius:999px;border:1px solid var(--line);font-size:.84rem;color:var(--muted);
-    }
-
-    .module-card,.lesson-card,.task-card,.screen-card,.coach-card,.quiz-card,.a11y-card,.mood-card,.footer-card{
-      padding:18px;display:grid;gap:12px;
-    }
-    .module-card h3,.lesson-card h3,.task-card h3,.screen-card h3,.coach-card h3,.quiz-card h3,.a11y-card h3,.mood-card h3,.footer-card h3{
-      margin:0;font-size:1.05rem;
-    }
-    .module-card ul,.screen-card ul{margin:0;padding-left:18px;color:var(--muted)}
-
-    .lesson-top,.quiz-top{
-      display:flex;justify-content:space-between;align-items:start;gap:10px;
-    }
-    .level{
-      border-radius:999px;padding:6px 10px;border:1px solid var(--line);font-size:.8rem;white-space:nowrap;
-    }
-
-    .coach-input,.text-input{
-      width:100%;border-radius:18px;border:1px solid var(--line);
-      background:rgba(255,255,255,.03);padding:14px;
-    }
-    .coach-input{min-height:120px;resize:vertical}
-    .coach-response{
-      min-height:88px;border:1px solid var(--line);background:rgba(255,255,255,.03);
-      border-radius:18px;padding:14px;color:var(--muted);
-    }
-
-    .control-grid{
-      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
-    }
-    .control{
-      border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);padding:14px;
-    }
-    .control label{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;
-    }
-    .control input[type="range"]{width:100%;margin-top:10px}
-
-    .quiz-option{
-      width:100%;text-align:left;border-radius:18px;border:1px solid var(--line);
-      background:rgba(255,255,255,.03);padding:14px;cursor:pointer;
-    }
-    .quiz-option[aria-pressed="true"]{
-      border-color:rgba(110,168,255,.56);background:rgba(110,168,255,.12);
-    }
-    .quiz-feedback{
-      border:1px solid var(--line);border-radius:18px;padding:14px;background:rgba(255,255,255,.03);color:var(--muted);
-      min-height:74px;
-    }
-
-    .mood-grid{
-      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;
-    }
-    .mood-btn{
-      border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);
-      min-height:74px;padding:12px;cursor:pointer;
-    }
-    .mood-btn.active{
-      border-color:rgba(110,168,255,.56);background:rgba(110,168,255,.12);
-    }
-
-    .status-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .timer-value{
-      font-size:2.5rem;font-weight:900;letter-spacing:-.04em;margin:6px 0;
-    }
-
-    .footer{padding:20px 0 44px}
-    .footer-grid{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:16px;
-    }
-
-    .mobile-nav{
-      display:none;
-    }
-
-    .overlay{
-      position:fixed;inset:0;z-index:90;display:grid;place-items:center;
-      padding:18px;background:rgba(3,8,18,.68);backdrop-filter:blur(10px);
-    }
-    .modal{
-      width:min(100%,760px);
-      background:var(--glass);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:20px;
-    }
-    .modal-head{
-      display:flex;justify-content:space-between;gap:10px;align-items:start;margin-bottom:10px;
-    }
-    .modal-steps{
-      display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;
-    }
-    .step-dot{
-      width:38px;height:8px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid var(--line);
-    }
-    .step-dot.active{
-      background:linear-gradient(90deg,var(--accent),var(--brand));
-    }
-
-    .announce{
-      border-left:4px solid var(--accent);padding-left:12px;color:var(--muted);
-    }
-
-    .sr-only{
-      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
-      clip:rect(0,0,0,0);white-space:nowrap;border:0;
-    }
-
-    @media (max-width:980px){
-      .hero-grid,.grid-4,.grid-3,.grid-2,.footer-grid,.hero-stats,.mood-grid,.control-grid{
-        grid-template-columns:1fr;
-      }
-    }
+    .container{width:min(100% - 24px, var(--container));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:70;backdrop-filter:blur(14px);background:rgba(8,16,30,.78);border-bottom:1px solid var(--line)}
+    body[data-theme="light"] .topbar{background:rgba(255,255,255,.82)}
+    .topbar-inner{width:min(100% - 20px,var(--container));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}.brand-mark{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;font-weight:900;color:#fff;box-shadow:var(--shadow)}
+    .eyebrow{color:var(--accent);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .top-actions,.row,.tabs,.mobile-nav{display:flex;gap:8px;flex-wrap:wrap}
+    .btn,.pillbtn,.tab-btn{min-height:42px;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;text-decoration:none}
+    .btn-primary,.tab-btn.active{background:linear-gradient(135deg,var(--brand),var(--brand2));border:none;color:#fff;font-weight:800}
+    .hero{padding:28px 0 16px}.hero-grid,.grid4,.grid3,.grid2,.stats4,.profiles,.badges{display:grid;gap:14px}
+    .hero-grid{grid-template-columns:1.12fr .88fr}.grid4{grid-template-columns:repeat(4,1fr)}.grid3{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:repeat(2,1fr)}.stats4{grid-template-columns:repeat(4,1fr)}.profiles{grid-template-columns:repeat(3,1fr)}.badges{grid-template-columns:repeat(4,1fr)}
+    .card{background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-main,.panel,.module,.workspace-card,.quiz-card,.coach-card,.a11y-card,.profile,.badge,.screen,.analytics,.footer-card{padding:18px}
+    h1{margin:10px 0 12px;font-size:clamp(2rem,4.3vw,3.7rem);line-height:1.03;letter-spacing:-.04em}
+    h2{margin:0;font-size:clamp(1.25rem,2.2vw,2rem)} h3{margin:0 0 8px;font-size:1.05rem}
+    .lead,.muted{color:var(--muted)} .section{padding:12px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:10px 0 14px}
+    .stat,.kpi,.mini{padding:14px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .mini strong,.kpi strong{display:block;font-size:1.3rem;margin-bottom:4px}
+    .kpi{min-height:140px}
+    .progress{height:12px;border-radius:999px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.07)}
+    .progress>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--brand));width:0;transition:width .35s ease}
+    .tag{display:inline-flex;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:.84rem}
+    .announce{border-left:4px solid var(--accent);padding-left:12px;color:var(--muted)}
+    .hero-main::before{content:"";position:absolute;inset:auto -10% -24% auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle, rgba(110,168,255,.3), transparent 60%);opacity:calc(.8*var(--motion))}
+    .hero-main{position:relative;overflow:hidden}
+    .tab-panel{display:none}.tab-panel.active{display:block}
+    .task-list{display:grid;gap:10px}.task{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:18px;padding:12px 14px;background:rgba(255,255,255,.03)}
+    .task.done{opacity:.72}.task.done .txt{text-decoration:line-through}
+    .coach-input,.quiz-feedback,.note,.control{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+    .coach-input{width:100%;min-height:120px;padding:14px;resize:vertical}.quiz-feedback,.note,.control{padding:14px}
+    .control-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .control label{display:flex;justify-content:space-between;align-items:center;gap:12px}.control input[type=range]{width:100%;margin-top:10px}
+    .quiz-option{width:100%;text-align:left;border-radius:18px;border:1px solid var(--line);padding:14px;background:rgba(255,255,255,.03);cursor:pointer}
+    .quiz-option[aria-pressed="true"]{border-color:rgba(110,168,255,.56);background:rgba(110,168,255,.12)}
+    .badge-icon{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;margin:0 auto 10px;color:#fff;font-weight:900;font-size:1.3rem}
+    .badge{text-align:center}.badge.locked{opacity:.58}
+    .profile.active{border-color:rgba(110,168,255,.56);background:linear-gradient(180deg, rgba(110,168,255,.12), rgba(255,255,255,.02))}
+    .analytics-bars{display:grid;gap:10px}.bar span{display:flex;justify-content:space-between;margin-bottom:6px;color:var(--muted)}
+    .overlay{position:fixed;inset:0;display:grid;place-items:center;background:rgba(3,8,18,.68);backdrop-filter:blur(10px);z-index:90;padding:18px}
+    .modal{width:min(100%,760px);padding:20px;border-radius:28px;background:var(--glass);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .modal-head{display:flex;justify-content:space-between;gap:10px;align-items:start;margin-bottom:8px}.steps{display:flex;gap:8px;margin-bottom:12px}.dot{width:38px;height:8px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid var(--line)}.dot.active{background:linear-gradient(90deg,var(--accent),var(--brand))}
+    .mobile-nav{display:none}
+    @media (max-width:1040px){.hero-grid,.grid4,.grid3,.grid2,.stats4,.profiles,.badges,.control-grid{grid-template-columns:1fr}}
     @media (max-width:720px){
-      :root{--radius:20px}
-      .topbar-inner{padding:10px 0}
-      .top-actions{width:100%}
-      .top-actions .btn,.top-actions .nav-pill,.top-actions .toggle{flex:1 1 auto;justify-content:center}
-      .hero-main,.panel,.module-card,.lesson-card,.task-card,.screen-card,.coach-card,.quiz-card,.a11y-card,.mood-card,.footer-card{padding:16px}
-      .mobile-nav{
-        display:grid;grid-template-columns:repeat(5,1fr);gap:8px;position:sticky;bottom:10px;z-index:40;
-        width:min(100% - 18px,var(--container));margin:8px auto 0;padding:10px;border-radius:24px;
-        border:1px solid var(--line);background:rgba(8,16,30,.84);backdrop-filter:blur(14px);
-      }
-      body[data-theme="light"] .mobile-nav{background:rgba(255,255,255,.92)}
-      .mobile-nav a{
-        min-height:48px;display:grid;place-items:center;text-decoration:none;border-radius:16px;border:1px solid var(--line);
-      }
-    }
-    @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{animation:none !important;transition:none !important}
+      .mobile-nav{display:grid;grid-template-columns:repeat(5,1fr);position:sticky;bottom:10px;z-index:40;width:min(100% - 18px,var(--container));margin:8px auto 0;padding:10px;border-radius:24px;border:1px solid var(--line);background:rgba(8,16,30,.84)}
+      body[data-theme="light"] .mobile-nav{background:rgba(255,255,255,.92)} .mobile-nav a{min-height:48px;display:grid;place-items:center;border:1px solid var(--line);border-radius:16px;text-decoration:none}
+      .top-actions{width:100%}.top-actions>*{flex:1 1 auto}
     }
   </style>
 </head>
-<body data-theme="dark" data-lang="ro" data-contrast="normal">
-  <a class="skip-link" href="#main" data-i18n="skip">Sari la conținut</a>
+<body data-theme="dark" data-contrast="normal">
+  <a href="#main" class="skip-link">Sari la conținut</a>
 
-  <div class="overlay" id="onboardingOverlay" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle">
+  <div class="overlay" id="overlay" hidden>
+    <div class="modal">
       <div class="modal-head">
         <div>
-          <div class="eyebrow" data-i18n="onboardEyebrow">Onboarding accesibil</div>
-          <h2 id="onboardingTitle" style="margin:6px 0 8px" data-i18n="onboardTitle">Bine ai venit în Access Arcade Coach Premium</h2>
+          <div class="eyebrow" id="obEyebrow">Onboarding accesibil</div>
+          <h2 id="obTitle">Bine ai venit în Access Arcade Coach</h2>
         </div>
-        <button class="btn" type="button" id="closeOnboarding" data-i18n="close">Închide</button>
+        <button class="btn" id="closeOb">Închide</button>
       </div>
-      <div class="modal-steps" aria-hidden="true">
-        <span class="step-dot active"></span>
-        <span class="step-dot"></span>
-        <span class="step-dot"></span>
-        <span class="step-dot"></span>
-      </div>
-      <div class="announce" id="onboardingContent"></div>
-      <div class="row-actions" style="margin-top:16px">
-        <button class="btn" type="button" id="prevOnboarding" data-i18n="prev">Înapoi</button>
-        <button class="btn btn-primary" type="button" id="nextOnboarding" data-i18n="next">Continuă</button>
-      </div>
+      <div class="steps"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="announce" id="obText"></div>
+      <div class="row" style="margin-top:16px"><button class="btn" id="prevOb">Înapoi</button><button class="btn btn-primary" id="nextOb">Continuă</button></div>
     </div>
   </div>
 
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand" aria-label="Access Arcade Coach Premium">
-        <div class="brand-mark" aria-hidden="true">A+</div>
-        <div class="brand-copy">
-          <div class="eyebrow" data-i18n="brandEyebrow">Access Arcade Coach Premium</div>
-          <strong data-i18n="brandTitle">Aplicație accesibilă · gamificată · bilinguală</strong>
+      <div class="brand">
+        <div class="brand-mark">A+</div>
+        <div>
+          <div class="eyebrow" id="brandEyebrow">Access Arcade Coach — Flagship</div>
+          <strong id="brandTitle">Aplicație accesibilă · gamificată · coach local</strong>
         </div>
       </div>
-      <nav class="top-actions" aria-label="Setări rapide">
-        <button class="toggle" id="langToggle" type="button">RO / EN</button>
-        <button class="toggle" id="themeToggle" type="button" data-i18n="darkMode">Dark mode</button>
-        <button class="toggle" id="onboardingToggle" type="button" data-i18n="onboardOpen">Onboarding</button>
-        <a class="nav-pill" href="#quiz" data-i18n="navQuiz">Quiz</a>
-        <a class="nav-pill" href="#coach" data-i18n="navCoach">Coach</a>
-        <a class="btn btn-primary" href="#accessibility" data-i18n="navA11y">Accesibilitate</a>
+      <nav class="top-actions">
+        <button class="pillbtn" id="langBtn">RO / EN</button>
+        <button class="pillbtn" id="themeBtn">Dark mode</button>
+        <button class="pillbtn" id="openOb">Onboarding</button>
+        <a class="pillbtn" href="case-study.html">Case Study</a>
+        <a class="pillbtn" href="login.html">Login Mock</a>
+        <a class="btn btn-primary" href="#workspace">Workspace</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="container">
-    <section class="hero" aria-labelledby="heroTitle">
+    <section class="hero">
       <div class="hero-grid">
         <article class="card hero-main">
-          <div class="eyebrow" data-i18n="heroEyebrow">ARCADE OPS + BACapp + Coaching-AI</div>
-          <h1 id="heroTitle" data-i18n="heroTitle">Un hub accesibil pentru rutină, studiu, coach local și autonomie digitală.</h1>
-          <p class="lead" data-i18n="heroLead">Varianta premium adaugă onboarding, quiz funcțional, mood check-in, taskuri reale, dark mode, high contrast, text resize, reduced motion și layout mobile-first.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#screens" data-i18n="heroPrimary">Vezi ecranele</a>
-            <a class="btn" href="#quiz" data-i18n="heroSecondary">Pornește quiz-ul</a>
+          <div class="eyebrow" id="heroEyebrow">ARCADE OPS + BACapp + Coaching-AI</div>
+          <h1 id="heroTitle">Versiune flagship pentru rutină, studiu, autonomie digitală și feedback calm.</h1>
+          <p class="lead" id="heroLead">Dashboard cu progres, profiluri de accesibilitate, workspace cu tab-uri, coach local, quiz, badge-uri și analytics blând, gândit mobile-first și RO/EN.</p>
+          <div class="row">
+            <a class="btn btn-primary" href="#workspace" id="heroPrimary">Deschide workspace</a>
+            <a class="btn" href="#badges" id="heroSecondary">Vezi badge-urile</a>
           </div>
-          <div class="announce small">
-            <strong data-i18n="heroNoteLabel">Direcție:</strong>
-            <span data-i18n="heroNoteText">static, fără costuri, fără backend, pregătit pentru GitHub Pages și ușor de extins cu date locale.</span>
-          </div>
-          <div class="hero-stats">
-            <div class="mini"><strong id="xpValue">320 XP</strong><span class="muted" data-i18n="statXp">progres total</span></div>
-            <div class="mini"><strong id="streakValue">7</strong><span class="muted" data-i18n="statStreak">zile streak</span></div>
-            <div class="mini"><strong id="missionValue">18</strong><span class="muted" data-i18n="statMission">misiuni făcute</span></div>
-            <div class="mini"><strong id="quizValue">0/3</strong><span class="muted" data-i18n="statQuiz">scor quiz</span></div>
+          <div class="announce" id="heroNote">Scop: o aplicație care susține persoane cu dizabilități prin structură clară, adaptări vizuale și interacțiuni previzibile.</div>
+          <div class="stats4" style="margin-top:18px">
+            <div class="mini"><strong id="xpValue">420 XP</strong><span class="muted" id="s1">progres total</span></div>
+            <div class="mini"><strong id="streakValue">9</strong><span class="muted" id="s2">zile streak</span></div>
+            <div class="mini"><strong id="missionValue">24</strong><span class="muted" id="s3">misiuni făcute</span></div>
+            <div class="mini"><strong id="quizValue">0/5</strong><span class="muted" id="s4">scor quiz</span></div>
           </div>
         </article>
 
-        <div class="stack">
+        <div class="grid2">
           <article class="card panel">
-            <div class="section-head" style="margin-top:0">
-              <h2 data-i18n="panelTitle">Panou rapid</h2>
-              <span class="tag" id="focusState" data-i18n="focusReady">Pregătit</span>
+            <div class="section-head"><h2 id="quickTitle">Panou rapid</h2><span class="tag" id="quickTag">Pregătit</span></div>
+            <div class="row"><span class="tag" id="tag1">accesibil</span><span class="tag">RO / EN</span><span class="tag" id="tag2">feedback calm</span></div>
+            <p class="muted" id="quickText">Preferințele, profilul activ, taskurile și progresul sunt păstrate local pentru o experiență predictibilă.</p>
+            <div class="progress"><span id="heroProgress" style="width:74%"></span></div>
+            <div class="row">
+              <button class="pillbtn" id="applyCalm">Mod calm</button>
+              <button class="pillbtn" id="applyFocus">Focus mode</button>
+              <button class="pillbtn" id="applyReduced">Reduced motion</button>
             </div>
-            <div class="status-row">
-              <span class="tag" data-i18n="tagAccessible">accesibil</span>
-              <span class="tag" data-i18n="tagBilingual">RO / EN</span>
-              <span class="tag" data-i18n="tagGentle">feedback calm</span>
-            </div>
-            <div style="margin-top:12px" class="small muted" data-i18n="panelText">Nivelurile, progresul, rutina și setările sunt păstrate local pentru o experiență predictibilă.</div>
-            <div style="margin-top:14px" class="progress"><span id="heroProgress" style="width:68%"></span></div>
           </article>
-
           <article class="card panel">
-            <div class="section-head" style="margin-top:0">
-              <h2 data-i18n="timerTitle">Focus timer</h2>
-              <span class="tag" id="timerState" data-i18n="timerReady">Pregătit</span>
-            </div>
-            <div class="timer-value" id="timerDisplay" aria-live="polite">20:00</div>
-            <p class="muted small" data-i18n="timerText">Sesiuni scurte și previzibile pentru focus fără presiune inutilă.</p>
-            <div class="row-actions">
-              <button class="btn btn-primary" id="startTimer" type="button" data-i18n="start">Start</button>
-              <button class="btn" id="pauseTimer" type="button" data-i18n="pause">Pauză</button>
-              <button class="btn" id="resetTimer" type="button" data-i18n="reset">Reset</button>
+            <div class="section-head"><h2 id="timerTitle">Focus timer</h2><span class="tag" id="timerState">Pregătit</span></div>
+            <div style="font-size:2.6rem;font-weight:900;letter-spacing:-.04em" id="timerDisplay">20:00</div>
+            <p class="muted" id="timerText">Sesiuni scurte și control simplu pentru focus fără presiune inutilă.</p>
+            <div class="row">
+              <button class="btn btn-primary" id="startTimer">Start</button>
+              <button class="btn" id="pauseTimer">Pauză</button>
+              <button class="btn" id="resetTimer">Reset</button>
             </div>
           </article>
         </div>
@@ -461,1115 +167,575 @@
     </section>
 
     <section class="section" id="dashboard">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="dashTitle">Dashboard accesibil</h2>
-          <p class="muted" data-i18n="dashLead">Inspirat de sistemele de progres din ARCADE OPS și de structura statică educațională din BACapp.</p>
-        </div>
-      </div>
-      <div class="grid-4">
-        <article class="card kpi">
-          <div class="label" data-i18n="kpi1">Nivel</div>
-          <strong>08</strong>
-          <div class="muted small" data-i18n="kpi1Text">Adaptive Explorer</div>
-        </article>
-        <article class="card kpi">
-          <div class="label" data-i18n="kpi2">Accesibilitate activă</div>
-          <strong id="a11yCount">8</strong>
-          <div class="muted small" data-i18n="kpi2Text">setări personalizate</div>
-        </article>
-        <article class="card kpi">
-          <div class="label" data-i18n="kpi3">Coach check-ins</div>
-          <strong id="coachCount">4</strong>
-          <div class="muted small" data-i18n="kpi3Text">sugestii disponibile azi</div>
-        </article>
-        <article class="card kpi">
-          <div class="label" data-i18n="kpi4">Mood activ</div>
-          <strong id="moodValue">🙂</strong>
-          <div class="muted small" data-i18n="kpi4Text">actualizat local</div>
-        </article>
+      <div class="section-head"><div><h2 id="dashTitle">Dashboard accesibil</h2><p class="muted" id="dashLead">O combinație între energie gamificată, structură educațională și reglaj personalizat.</p></div></div>
+      <div class="grid4">
+        <article class="card kpi"><div class="muted" id="k1">Nivel</div><strong>11</strong><div class="muted" id="k1t">Adaptive Strategist</div></article>
+        <article class="card kpi"><div class="muted" id="k2">Accesibilitate activă</div><strong id="a11yCount">8</strong><div class="muted" id="k2t">setări personalizate</div></article>
+        <article class="card kpi"><div class="muted" id="k3">Coach check-ins</div><strong id="coachCount">4</strong><div class="muted" id="k3t">sugestii active azi</div></article>
+        <article class="card kpi"><div class="muted" id="k4">Mood activ</div><strong id="moodValue">🙂</strong><div class="muted" id="k4t">ajustează tonul aplicației</div></article>
       </div>
     </section>
 
-    <section class="section" id="modules">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="modulesTitle">Module combinate</h2>
-          <p class="muted" data-i18n="modulesLead">Trei surse, o singură experiență: quests, studiu și coach conversațional local.</p>
-        </div>
-      </div>
-      <div class="grid-3">
-        <article class="card module-card">
-          <h3 data-i18n="mod1">Arcade Missions</h3>
-          <p class="muted" data-i18n="mod1Text">Quest-uri cu XP, progres, butoane mari și feedback clar.</p>
-          <ul>
-            <li data-i18n="mod1Li1">onboarding și progres vizibil</li>
-            <li data-i18n="mod1Li2">recompense fără penalizare agresivă</li>
-            <li data-i18n="mod1Li3">logică simplă și touch-friendly</li>
-          </ul>
-        </article>
-        <article class="card module-card">
-          <h3 data-i18n="mod2">Study Paths</h3>
-          <p class="muted" data-i18n="mod2Text">Lecții și recapitulări inspirate din BACapp, optimizate pentru claritate.</p>
-          <ul>
-            <li data-i18n="mod2Li1">trasee scurte și previzibile</li>
-            <li data-i18n="mod2Li2">quiz funcțional cu feedback</li>
-            <li data-i18n="mod2Li3">progres local și recap simplu</li>
-          </ul>
-        </article>
-        <article class="card module-card">
-          <h3 data-i18n="mod3">Coach Companion</h3>
-          <p class="muted" data-i18n="mod3Text">Coach local, mood check-in, taskuri și focus timer.</p>
-          <ul>
-            <li data-i18n="mod3Li1">rule-based local replies</li>
-            <li data-i18n="mod3Li2">mood + task + focus flow</li>
-            <li data-i18n="mod3Li3">preferințe salvate în browser</li>
-          </ul>
-        </article>
+    <section class="section" id="profiles">
+      <div class="section-head"><div><h2 id="profilesTitle">Profiluri de accesibilitate</h2><p class="muted" id="profilesLead">Poți activa rapid un profil predefinit, apoi îl poți ajusta fin din Accessibility Center.</p></div></div>
+      <div class="profiles">
+        <article class="card profile active" data-profile="calm"><h3>Calm & Clear</h3><p class="muted" id="p1">Contrast echilibrat, text 104%, focus pe claritate și ritm blând.</p><button class="btn btn-primary applyProfile" data-profile="calm" id="ap1">Aplică profilul</button></article>
+        <article class="card profile" data-profile="focus"><h3>Focus Boost</h3><p class="muted" id="p2">Contrast ridicat, text 110%, focus assist activ și layout mai sever.</p><button class="btn applyProfile" data-profile="focus" id="ap2">Aplică profilul</button></article>
+        <article class="card profile" data-profile="reduced"><h3>Reduced Motion</h3><p class="muted" id="p3">Mișcare redusă, text 106%, dark mode și citire calmă.</p><button class="btn applyProfile" data-profile="reduced" id="ap3">Aplică profilul</button></article>
       </div>
     </section>
 
-    <section class="section" id="mood">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="moodTitle">Mood check-in</h2>
-          <p class="muted" data-i18n="moodLead">Inspirat din Coaching-AI: o intrare simplă pentru ritm, ton și recomandări locale.</p>
-        </div>
+    <section class="section" id="workspace">
+      <div class="section-head"><div><h2 id="wsTitle">Workspace principal</h2><p class="muted" id="wsLead">Task board, learning paths, coach și analytics într-un singur flow.</p></div></div>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tasks" id="tb1">Task board</button>
+        <button class="tab-btn" data-tab="paths" id="tb2">Paths</button>
+        <button class="tab-btn" data-tab="coach" id="tb3">Coach</button>
+        <button class="tab-btn" data-tab="analytics" id="tb4">Analytics</button>
+        <button class="tab-btn" data-tab="mandala" id="tb5">Mandala</button>
+        <button class="tab-btn" data-tab="scratch" id="tb6">Scratch Lab</button>
       </div>
-      <article class="card mood-card">
-        <div class="mood-grid">
-          <button class="mood-btn" data-mood="🙂" type="button">🙂<br><span class="tiny" data-i18n="mood1">Calm</span></button>
-          <button class="mood-btn" data-mood="😕" type="button">😕<br><span class="tiny" data-i18n="mood2">Obosit</span></button>
-          <button class="mood-btn" data-mood="😣" type="button">😣<br><span class="tiny" data-i18n="mood3">Copleșit</span></button>
-          <button class="mood-btn" data-mood="🔥" type="button">🔥<br><span class="tiny" data-i18n="mood4">Motivat</span></button>
-        </div>
-        <div class="announce" id="moodResponse" data-i18n="moodText">Alege o stare și aplicația îți ajustează recomandările și tonul feedback-ului.</div>
-      </article>
-    </section>
 
-    <section class="section" id="lessons">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="pathsTitle">Trasee de învățare</h2>
-          <p class="muted" data-i18n="pathsLead">Mobile-first, cu ierarhie clară, progres și pași mici.</p>
-        </div>
-      </div>
-      <div class="grid-3">
-        <article class="card lesson-card">
-          <div class="lesson-top">
-            <div>
-              <h3 data-i18n="lesson1">Rutina de bază</h3>
-              <p class="muted small" data-i18n="lesson1Text">Check-in, 10 minute focus, recap scurt.</p>
+      <div class="tab-panel active" data-panel="tasks">
+        <div class="grid2">
+          <article class="card workspace-card">
+            <h3 id="taskBoardTitle">Task board accesibil</h3>
+            <p class="muted" id="taskBoardText">Bifează taskurile finalizate. Progresul se actualizează local și contribuie la XP.</p>
+            <div class="task-list" id="taskList"></div>
+            <div class="row"><button class="btn btn-primary" id="rewardBtn">Recompensează taskurile făcute</button><button class="btn" id="resetTasks">Resetează taskurile</button></div>
+          </article>
+          <article class="card workspace-card">
+            <h3 id="missionTitle">Misiuni rapide</h3>
+            <p class="muted" id="missionText">Inspirate din ARCADE OPS, dar adaptate pentru ritm calm și claritate cognitivă.</p>
+            <div class="row">
+              <button class="btn btn-primary addXp" data-xp="20" id="m1">Completează rutina de start</button>
+              <button class="btn addXp" data-xp="25" id="m2">Finalizează un mini-quiz</button>
+              <button class="btn addXp" data-xp="15" id="m3">Folosește coach-ul pentru un plan</button>
             </div>
-            <span class="level" data-i18n="easy">Ușor</span>
-          </div>
-          <div class="progress"><span style="width:60%"></span></div>
-          <div class="row-actions">
-            <button class="btn btn-primary add-xp" data-xp="20" type="button" data-i18n="continue">Continuă</button>
-            <button class="btn coach-fill" data-message-ro="Ajută-mă să pornesc rutina de bază." data-message-en="Help me start my basic routine." type="button" data-i18n="askCoach">Întreabă coach-ul</button>
-          </div>
-        </article>
+            <div class="note" id="missionNote">Misiunile oferă XP, dar fără feedback agresiv sau presiune inutilă.</div>
+          </article>
+        </div>
+      </div>
 
-        <article class="card lesson-card">
-          <div class="lesson-top">
-            <div>
-              <h3 data-i18n="lesson2">Comunicare și orientare</h3>
-              <p class="muted small" data-i18n="lesson2Text">Mesaje simple, alegeri clare, secvențe previzibile.</p>
-            </div>
-            <span class="level" data-i18n="medium">Mediu</span>
-          </div>
-          <div class="progress"><span style="width:45%"></span></div>
-          <div class="row-actions">
-            <button class="btn btn-primary add-xp" data-xp="25" type="button" data-i18n="continue">Continuă</button>
-            <button class="btn coach-fill" data-message-ro="Vreau pași simpli pentru comunicare și orientare." data-message-en="I need simple steps for communication and orientation." type="button" data-i18n="askCoach">Întreabă coach-ul</button>
-          </div>
-        </article>
+      <div class="tab-panel" data-panel="paths">
+        <div class="grid3">
+          <article class="card workspace-card"><h3 id="l1">Rutina de bază</h3><p class="muted" id="l1t">Check-in, 10 minute focus, recap scurt.</p><div class="progress"><span style="width:62%"></span></div><div class="row"><button class="btn btn-primary addXp" data-xp="20" id="c1">Continuă</button><button class="btn coachFill" data-ro="Ajută-mă să încep rutina de bază." data-en="Help me start my basic routine." id="ac1">Întreabă coach-ul</button></div></article>
+          <article class="card workspace-card"><h3 id="l2">Comunicare și orientare</h3><p class="muted" id="l2t">Mesaje simple, alegeri clare și secvențe previzibile.</p><div class="progress"><span style="width:46%"></span></div><div class="row"><button class="btn btn-primary addXp" data-xp="25" id="c2">Continuă</button><button class="btn coachFill" data-ro="Vreau pași simpli pentru orientare și comunicare." data-en="I need simple steps for orientation and communication." id="ac2">Întreabă coach-ul</button></div></article>
+          <article class="card workspace-card"><h3 id="l3">Study Sprint + Quiz</h3><p class="muted" id="l3t">Conținut fragmentat, exercițiu și feedback blând.</p><div class="progress"><span style="width:78%"></span></div><div class="row"><button class="btn btn-primary addXp" data-xp="30" id="c3">Continuă</button><a class="btn" href="#quiz" id="oq">Deschide quiz</a></div></article>
+        </div>
+      </div>
 
-        <article class="card lesson-card">
-          <div class="lesson-top">
-            <div>
-              <h3 data-i18n="lesson3">Study Sprint + Quiz</h3>
-              <p class="muted small" data-i18n="lesson3Text">Conținut fragmentat, exercițiu și feedback blând.</p>
-            </div>
-            <span class="level" data-i18n="focus">Focus</span>
-          </div>
-          <div class="progress"><span style="width:78%"></span></div>
-          <div class="row-actions">
-            <button class="btn btn-primary add-xp" data-xp="30" type="button" data-i18n="continue">Continuă</button>
-            <a class="btn" href="#quiz" data-i18n="openQuiz">Deschide quiz</a>
-          </div>
+      <div class="tab-panel" data-panel="coach">
+        <article class="card coach-card">
+          <h3 id="coachTitle">Coach local</h3>
+          <p class="muted" id="coachLead">Rule-based, calm și orientat pe autonomie, cu răspunsuri rapide și previzibile.</p>
+          <textarea id="coachInput" class="coach-input" placeholder="Ex: Sunt blocat(ă). Dă-mi un plan simplu pentru următoarele 10 minute."></textarea>
+          <div class="row"><button class="btn btn-primary" id="coachSend">Generează răspuns</button><button class="btn" id="coachCalm">Mod calm</button><button class="btn" id="coachPlan">Plan în 3 pași</button></div>
+          <div class="quiz-feedback" id="coachResponse">Răspunsul coach-ului apare aici.</div>
         </article>
       </div>
+
+      <div class="tab-panel" data-panel="analytics">
+        <div class="grid2">
+          <article class="card analytics">
+            <h3 id="anTitle">Analytics blând</h3>
+            <p class="muted" id="anLead">Vizualizare simplă a zonelor de progres, fără supraîncărcare inutilă.</p>
+            <div class="analytics-bars">
+              <div class="bar"><span><strong id="b1">Rutină</strong><b id="brl">72%</b></span><div class="progress"><span id="br" style="width:72%"></span></div></div>
+              <div class="bar"><span><strong id="b2">Studiu</strong><b id="bsl">81%</b></span><div class="progress"><span id="bs" style="width:81%"></span></div></div>
+              <div class="bar"><span><strong id="b3">Autonomie</strong><b id="bal">68%</b></span><div class="progress"><span id="ba" style="width:68%"></span></div></div>
+            </div>
+          </article>
+          <article class="card analytics">
+            <h3 id="sumTitle">Rezumat local</h3>
+            <div class="note" id="summaryBox">Aplicația rezumă progresul, profilul activ și starea curentă într-un mod simplu și ușor de citit.</div>
+            <div class="row"><button class="btn btn-primary" id="refreshSummary">Actualizează rezumatul</button></div>
+          </article>
+        </div>
+      </div>
     </section>
+
+
+      <div class="tab-panel" data-panel="mandala">
+        <div class="grid2">
+          <article class="card workspace-card">
+            <h3 id="mandalaTitle">Mandala Calm</h3>
+            <p class="muted" id="mandalaLead">Un modul de reglare și concentrare bazat pe mișcare lentă, simetrie și alegere simplă de culori.</p>
+            <div class="row">
+              <button class="btn btn-primary mandalaMood" data-tone="calm" id="mandalaCalm">Calm</button>
+              <button class="btn mandalaMood" data-tone="focus" id="mandalaFocus">Focus</button>
+              <button class="btn mandalaMood" data-tone="energy" id="mandalaEnergy">Energy</button>
+            </div>
+            <div class="note" id="mandalaNote">Alege un ton, apoi folosește cercurile ca exercițiu vizual lent. Modul nu cere precizie perfectă, ci ritm calm.</div>
+          </article>
+          <article class="card workspace-card">
+            <h3 id="mandalaBoardTitle">Mandala Board</h3>
+            <p class="muted" id="mandalaBoardText">Tap sau click pe cercuri pentru a schimba starea vizuală. Gândit ca micro-pauză de focus, nu ca test de performanță.</p>
+            <svg id="mandalaSvg" viewBox="0 0 300 300" width="100%" role="img" aria-label="Mandala interactive board">
+              <circle cx="150" cy="150" r="110" fill="none" stroke="currentColor" opacity=".18" stroke-width="2"/>
+              <circle class="mandala-node" data-idx="0" cx="150" cy="60" r="22" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="1" cx="220" cy="90" r="18" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="2" cx="245" cy="150" r="22" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="3" cx="220" cy="210" r="18" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="4" cx="150" cy="240" r="22" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="5" cx="80" cy="210" r="18" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="6" cx="55" cy="150" r="22" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="7" cx="80" cy="90" r="18" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".9"/>
+              <circle class="mandala-node" data-idx="8" cx="150" cy="150" r="28" fill="rgba(255,255,255,.08)" stroke="currentColor" opacity=".95"/>
+            </svg>
+            <div class="row">
+              <button class="btn" id="mandalaReset">Reset Mandala</button>
+              <button class="btn btn-primary addXp" data-xp="12" id="mandalaReward">Finalizează sesiunea</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-panel="scratch">
+        <div class="grid2">
+          <article class="card workspace-card">
+            <h3 id="scratchTitle">Scratch Lab</h3>
+            <p class="muted" id="scratchLead">O zonă creativă inspirată de logica block-based: story prompt, secvențe și micro-interacțiuni pentru învățare expresivă.</p>
+            <div class="row">
+              <button class="btn btn-primary scratchPrompt" data-type="story" id="scratchStory">Story</button>
+              <button class="btn scratchPrompt" data-type="motion" id="scratchMotion">Motion</button>
+              <button class="btn scratchPrompt" data-type="dialog" id="scratchDialog">Dialog</button>
+            </div>
+            <div class="note" id="scratchPromptBox">Alege un tip de proiect și aplicația îți generează o idee simplă de construit, în pași scurți.</div>
+          </article>
+
+          <article class="card workspace-card">
+            <h3 id="scratchBoardTitle">Scratch Sequence Builder</h3>
+            <p class="muted" id="scratchBoardText">Construiește un flow simplu cu blocuri logice: start, move, say, celebrate. Gândit ca activitate creativă și clară.</p>
+            <div class="row" style="margin-bottom:10px">
+              <button class="btn scratchBlock" data-block="start">start</button>
+              <button class="btn scratchBlock" data-block="move">move</button>
+              <button class="btn scratchBlock" data-block="say">say</button>
+              <button class="btn scratchBlock" data-block="celebrate">celebrate</button>
+            </div>
+            <div class="note" id="scratchSequence">Flow: —</div>
+            <div class="row">
+              <button class="btn" id="scratchReset">Reset Flow</button>
+              <button class="btn btn-primary addXp" data-xp="18" id="scratchReward">Save Creative Flow</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
 
     <section class="section" id="quiz">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="quizTitle">Quiz funcțional</h2>
-          <p class="muted" data-i18n="quizLead">Un exemplu de quiz real, inspirat de logica educațională statică din BACapp.</p>
-        </div>
-      </div>
+      <div class="section-head"><div><h2 id="quizTitle">Quiz extins</h2><p class="muted" id="quizLead">Un quiz mai bogat, cu 5 întrebări, feedback și progres vizibil.</p></div></div>
       <article class="card quiz-card">
-        <div class="quiz-top">
-          <div>
-            <h3 id="quizQuestion">Q1</h3>
-            <p class="muted small" id="quizMeta" data-i18n="quizMeta">Întrebare 1 din 3</p>
-          </div>
-          <span class="level" id="quizCounter">1 / 3</span>
-        </div>
-        <div id="quizOptions" class="stack-actions" style="display:grid"></div>
-        <div class="quiz-feedback" id="quizFeedback" aria-live="polite" data-i18n="quizInitial">Alege un răspuns ca să primești feedback.</div>
-        <div class="row-actions">
-          <button class="btn" id="quizNext" type="button" data-i18n="nextQuestion">Următoarea întrebare</button>
-          <button class="btn btn-primary" id="quizReset" type="button" data-i18n="resetQuiz">Resetează quiz</button>
-        </div>
+        <div class="section-head"><div><h3 id="quizQuestion">Q1</h3><p class="muted" id="quizMeta">Întrebare 1 din 5</p></div><span class="tag" id="quizCounter">1 / 5</span></div>
+        <div id="quizOptions" class="grid2"></div>
+        <div class="quiz-feedback" id="quizFeedback">Alege un răspuns ca să primești feedback.</div>
+        <div class="row"><button class="btn" id="quizNext">Următoarea întrebare</button><button class="btn btn-primary" id="quizReset">Resetează quiz</button></div>
       </article>
     </section>
 
-    <section class="section" id="tasks">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="tasksTitle">Misiuni rapide</h2>
-          <p class="muted" data-i18n="tasksLead">Taskuri inspirate din dashboard-ul de productivitate și quest-urile ARCADE OPS.</p>
-        </div>
+    <section class="section" id="badges">
+      <div class="section-head"><div><h2 id="badgesTitle">Badge-uri și progres</h2><p class="muted" id="badgesLead">Reward logic, vizibil și calm pentru a susține motivația fără penalizare agresivă.</p></div></div>
+      <div class="badges">
+        <article class="card badge"><div class="badge-icon">S</div><h3 id="bd1">Starter</h3><p class="muted" id="bd1t">Ai pornit onboarding-ul și ai configurat aplicația.</p></article>
+        <article class="card badge"><div class="badge-icon">F</div><h3 id="bd2">Focus Pilot</h3><p class="muted" id="bd2t">Ai folosit timerul și ai finalizat o sesiune scurtă.</p></article>
+        <article class="card badge"><div class="badge-icon">Q</div><h3 id="bd3">Quiz Learner</h3><p class="muted" id="bd3t">Ai răspuns la întrebări și ai primit feedback calm.</p></article>
+        <article class="card badge locked"><div class="badge-icon">A</div><h3 id="bd4">Adaptive Master</h3><p class="muted" id="bd4t">Deblochează-l prin mai multe misiuni și setări active.</p></article>
       </div>
-      <div class="grid-2">
-        <article class="card task-card">
-          <h3 data-i18n="task1">Pornește o sesiune scurtă de focus</h3>
-          <p class="muted" data-i18n="task1Text">20 minute focus + 5 minute pauză, cu timer vizibil și control simplu.</p>
-          <div class="pill-row"><span class="pill">+20 XP</span><span class="pill" data-i18n="routine">Rutină</span></div>
-          <div class="row-actions">
-            <button class="btn btn-primary add-xp" data-xp="20" type="button" data-i18n="complete">Completează</button>
-            <button class="btn coach-fill" data-message-ro="Am nevoie de un început blând pentru o sesiune de focus." data-message-en="I need a gentle start for a focus session." type="button" data-i18n="askCoach">Întreabă coach-ul</button>
-          </div>
-        </article>
-        <article class="card task-card">
-          <h3 data-i18n="task2">Răspunde la un quiz fără stres</h3>
-          <p class="muted" data-i18n="task2Text">Pași mici, feedback explicat și progres clar, fără presiune inutilă.</p>
-          <div class="pill-row"><span class="pill">+25 XP</span><span class="pill" data-i18n="study">Studiu</span></div>
-          <div class="row-actions">
-            <button class="btn btn-primary add-xp" data-xp="25" type="button" data-i18n="complete">Completează</button>
-            <a class="btn" href="#quiz" data-i18n="openQuiz">Deschide quiz</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="coach">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="coachTitle">Coach local</h2>
-          <p class="muted" data-i18n="coachLead">Rule-based, local, calm și orientat pe autonomie, inspirat de Coaching-AI.</p>
-        </div>
-      </div>
-      <article class="card coach-card">
-        <label for="coachInput" class="small" data-i18n="coachLabel">Scrie ce ai nevoie acum</label>
-        <textarea id="coachInput" class="coach-input" data-i18n-placeholder="coachPlaceholder" placeholder="Ex: Sunt blocat(ă). Dă-mi un plan simplu pentru următoarele 10 minute."></textarea>
-        <div class="row-actions">
-          <button class="btn btn-primary" id="coachSend" type="button" data-i18n="sendCoach">Generează răspuns</button>
-          <button class="btn" id="coachCalm" type="button" data-i18n="calmMode">Mod calm</button>
-          <button class="btn" id="coachPlan" type="button" data-i18n="planMode">Plan în 3 pași</button>
-        </div>
-        <div class="coach-response" id="coachResponse" aria-live="polite" data-i18n="coachInitial">Răspunsul coach-ului apare aici.</div>
-        <div class="small muted" data-i18n="coachNote">Răspunsurile sunt locale și exemplificative, fără backend sau API real.</div>
-      </article>
     </section>
 
     <section class="section" id="accessibility">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="a11yTitle">Accessibility Center</h2>
-          <p class="muted" data-i18n="a11yLead">Setări centralizate pentru citire, orientare, control și confort vizual.</p>
-        </div>
-      </div>
+      <div class="section-head"><div><h2 id="a11yTitle">Accessibility Center</h2><p class="muted" id="a11yLead">Setări centralizate pentru citire, orientare, control și confort vizual.</p></div></div>
       <article class="card a11y-card">
         <div class="control-grid">
-          <div class="control">
-            <label for="fontSize">
-              <span data-i18n="fontSize">Mărime text</span>
-              <strong id="fontSizeLabel">100%</strong>
-            </label>
-            <input id="fontSize" type="range" min="90" max="126" value="100">
-          </div>
-          <div class="control">
-            <label for="contrastToggle">
-              <span data-i18n="highContrast">Contrast ridicat</span>
-              <input id="contrastToggle" type="checkbox">
-            </label>
-            <p class="muted small" data-i18n="highContrastText">Crește separarea dintre elemente și text.</p>
-          </div>
-          <div class="control">
-            <label for="motionToggle">
-              <span data-i18n="reducedMotion">Reducere animații</span>
-              <input id="motionToggle" type="checkbox">
-            </label>
-            <p class="muted small" data-i18n="reducedMotionText">Util pentru sensibilitate la mișcare.</p>
-          </div>
-          <div class="control">
-            <label for="focusToggle">
-              <span data-i18n="focusAssist">Asistență focus</span>
-              <input id="focusToggle" type="checkbox" checked>
-            </label>
-            <p class="muted small" data-i18n="focusAssistText">Păstrează secțiuni aerisite și accent pe acțiunile principale.</p>
-          </div>
-        </div>
-        <div class="pill-row">
-          <span class="pill">skip-link</span>
-          <span class="pill">RO / EN</span>
-          <span class="pill">dark mode</span>
-          <span class="pill">mobile-first</span>
-          <span class="pill">quiz accesibil</span>
-          <span class="pill">coach local</span>
-          <span class="pill">focus timer</span>
-          <span class="pill">localStorage</span>
+          <div class="control"><label><span id="fsLabelText">Mărime text</span><strong id="fontSizeLabel">100%</strong></label><input type="range" id="fontSize" min="90" max="126" value="100"></div>
+          <div class="control"><label><span id="hcText">Contrast ridicat</span><input type="checkbox" id="contrastToggle"></label><p class="muted" id="hcDesc">Crește separarea dintre elemente și text.</p></div>
+          <div class="control"><label><span id="rmText">Reducere animații</span><input type="checkbox" id="motionToggle"></label><p class="muted" id="rmDesc">Util pentru sensibilitate la mișcare.</p></div>
+          <div class="control"><label><span id="faText">Asistență focus</span><input type="checkbox" id="focusToggle" checked></label><p class="muted" id="faDesc">Păstrează secțiuni aerisite și accent pe acțiunile principale.</p></div>
         </div>
       </article>
     </section>
 
     <section class="section" id="screens">
-      <div class="section-head">
-        <div>
-          <h2 data-i18n="screensTitle">Structura paginii adaptate</h2>
-          <p class="muted" data-i18n="screensLead">Nu doar UI frumos, ci și orientare clară pentru utilizatori cu nevoi diferite.</p>
-        </div>
-      </div>
-      <div class="grid-2">
-        <article class="card screen-card">
-          <h3 data-i18n="screen1">1. Home adaptat</h3>
-          <p class="muted" data-i18n="screen1Text">Hero clar, butoane mari, rezumat progres, intrare rapidă în setările de accesibilitate.</p>
-          <ul>
-            <li data-i18n="screen1Li1">navigație simplă</li>
-            <li data-i18n="screen1Li2">CTA clar pe mobil</li>
-            <li data-i18n="screen1Li3">dark/light fără reload</li>
-          </ul>
-        </article>
-        <article class="card screen-card">
-          <h3 data-i18n="screen2">2. Learning + Quiz</h3>
-          <p class="muted" data-i18n="screen2Text">Conținut în bucăți mici, quiz cu feedback și progres vizibil.</p>
-          <ul>
-            <li data-i18n="screen2Li1">întrebări scurte</li>
-            <li data-i18n="screen2Li2">feedback blând</li>
-            <li data-i18n="screen2Li3">reset ușor</li>
-          </ul>
-        </article>
-        <article class="card screen-card">
-          <h3 data-i18n="screen3">3. Mood + Coach</h3>
-          <p class="muted" data-i18n="screen3Text">O zonă separată pentru reglare emoțională, taskuri și sprijin local.</p>
-          <ul>
-            <li data-i18n="screen3Li1">mood check-in</li>
-            <li data-i18n="screen3Li2">coach rule-based</li>
-            <li data-i18n="screen3Li3">taskuri și timer</li>
-          </ul>
-        </article>
-        <article class="card screen-card">
-          <h3 data-i18n="screen4">4. Accessibility Center</h3>
-          <p class="muted" data-i18n="screen4Text">Toate preferințele într-un singur loc pentru predictibilitate și autonomie.</p>
-          <ul>
-            <li data-i18n="screen4Li1">font resize</li>
-            <li data-i18n="screen4Li2">high contrast</li>
-            <li data-i18n="screen4Li3">reduced motion</li>
-          </ul>
-        </article>
+      <div class="section-head"><div><h2 id="screensTitle">Structura paginii adaptate</h2><p class="muted" id="screensLead">Fiecare zonă are un rol clar: orientare, acțiune, recap și personalizare.</p></div></div>
+      <div class="grid2">
+        <article class="card screen"><h3 id="sc1">1. Home adaptat</h3><p class="muted" id="sc1t">Hero clar, CTA mare, KPIs și intrare rapidă în workspace.</p></article>
+        <article class="card screen"><h3 id="sc2">2. Workspace cu tab-uri</h3><p class="muted" id="sc2t">Task board, learning paths, coach și analytics într-un singur spațiu.</p></article>
+        <article class="card screen"><h3 id="sc3">3. Quiz + Badge-uri</h3><p class="muted" id="sc3t">Progres educațional clar, feedback calm și reward logic.</p></article>
+        <article class="card screen"><h3 id="sc4">4. Accessibility Center</h3><p class="muted" id="sc4t">Personalizare rapidă pentru confort și predictibilitate.</p></article>
       </div>
     </section>
-
-    <footer class="footer">
-      <div class="footer-grid">
-        <article class="card footer-card">
-          <h3 data-i18n="footer1">Cum e gândit pentru GitHub Pages</h3>
-          <p class="muted" data-i18n="footer1Text">Single-file, static, fără costuri și ușor de extins. Ideal pentru demo public, portofoliu sau MVP accesibil.</p>
-        </article>
-        <article class="card footer-card">
-          <h3 data-i18n="footer2">Ce ai putea adăuga mai departe</h3>
-          <p class="muted" data-i18n="footer2Text">Mai multe quiz-uri pe categorii, profiluri de accesibilitate salvabile, badge-uri, mini-jocuri și export de progres.</p>
-        </article>
-      </div>
-    </footer>
   </main>
 
-  <nav class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#dashboard">Dash</a>
-    <a href="#mood">Mood</a>
-    <a href="#quiz">Quiz</a>
-    <a href="#coach">Coach</a>
-    <a href="#accessibility">A11y</a>
+  <nav class="mobile-nav">
+    <a href="#dashboard">Dash</a><a href="#workspace">Work</a><a href="#quiz">Quiz</a><a href="#badges">XP</a><a href="#accessibility">A11y</a>
   </nav>
 
   <script>
     const i18n = {
       ro:{
-        skip:"Sari la conținut",
-        brandEyebrow:"Access Arcade Coach Premium",
-        brandTitle:"Aplicație accesibilă · gamificată · bilinguală",
-        darkMode:"Dark mode",
-        onboardOpen:"Onboarding",
-        navQuiz:"Quiz",
-        navCoach:"Coach",
-        navA11y:"Accesibilitate",
-        onboardEyebrow:"Onboarding accesibil",
-        onboardTitle:"Bine ai venit în Access Arcade Coach Premium",
-        close:"Închide",
-        prev:"Înapoi",
-        next:"Continuă",
-        heroEyebrow:"ARCADE OPS + BACapp + Coaching-AI",
-        heroTitle:"Un hub accesibil pentru rutină, studiu, coach local și autonomie digitală.",
-        heroLead:"Varianta premium adaugă onboarding, quiz funcțional, mood check-in, taskuri reale, dark mode, high contrast, text resize, reduced motion și layout mobile-first.",
-        heroPrimary:"Vezi ecranele",
-        heroSecondary:"Pornește quiz-ul",
-        heroNoteLabel:"Direcție:",
-        heroNoteText:"static, fără costuri, fără backend, pregătit pentru GitHub Pages și ușor de extins cu date locale.",
-        statXp:"progres total",
-        statStreak:"zile streak",
-        statMission:"misiuni făcute",
-        statQuiz:"scor quiz",
-        panelTitle:"Panou rapid",
-        focusReady:"Pregătit",
-        tagAccessible:"accesibil",
-        tagBilingual:"RO / EN",
-        tagGentle:"feedback calm",
-        panelText:"Nivelurile, progresul, rutina și setările sunt păstrate local pentru o experiență predictibilă.",
-        timerTitle:"Focus timer",
-        timerReady:"Pregătit",
-        timerText:"Sesiuni scurte și previzibile pentru focus fără presiune inutilă.",
-        start:"Start",
-        pause:"Pauză",
-        reset:"Reset",
-        dashTitle:"Dashboard accesibil",
-        dashLead:"Inspirat de sistemele de progres din ARCADE OPS și de structura statică educațională din BACapp.",
-        kpi1:"Nivel",
-        kpi1Text:"Adaptive Explorer",
-        kpi2:"Accesibilitate activă",
-        kpi2Text:"setări personalizate",
-        kpi3:"Coach check-ins",
-        kpi3Text:"sugestii disponibile azi",
-        kpi4:"Mood activ",
-        kpi4Text:"actualizat local",
-        modulesTitle:"Module combinate",
-        modulesLead:"Trei surse, o singură experiență: quests, studiu și coach conversațional local.",
-        mod1:"Arcade Missions",
-        mod1Text:"Quest-uri cu XP, progres, butoane mari și feedback clar.",
-        mod1Li1:"onboarding și progres vizibil",
-        mod1Li2:"recompense fără penalizare agresivă",
-        mod1Li3:"logică simplă și touch-friendly",
-        mod2:"Study Paths",
-        mod2Text:"Lecții și recapitulări inspirate din BACapp, optimizate pentru claritate.",
-        mod2Li1:"trasee scurte și previzibile",
-        mod2Li2:"quiz funcțional cu feedback",
-        mod2Li3:"progres local și recap simplu",
-        mod3:"Coach Companion",
-        mod3Text:"Coach local, mood check-in, taskuri și focus timer.",
-        mod3Li1:"rule-based local replies",
-        mod3Li2:"mood + task + focus flow",
-        mod3Li3:"preferințe salvate în browser",
-        moodTitle:"Mood check-in",
-        moodLead:"Inspirat din Coaching-AI: o intrare simplă pentru ritm, ton și recomandări locale.",
-        mood1:"Calm",
-        mood2:"Obosit",
-        mood3:"Copleșit",
-        mood4:"Motivat",
-        moodText:"Alege o stare și aplicația îți ajustează recomandările și tonul feedback-ului.",
-        pathsTitle:"Trasee de învățare",
-        pathsLead:"Mobile-first, cu ierarhie clară, progres și pași mici.",
-        lesson1:"Rutina de bază",
-        lesson1Text:"Check-in, 10 minute focus, recap scurt.",
-        lesson2:"Comunicare și orientare",
-        lesson2Text:"Mesaje simple, alegeri clare, secvențe previzibile.",
-        lesson3:"Study Sprint + Quiz",
-        lesson3Text:"Conținut fragmentat, exercițiu și feedback blând.",
-        easy:"Ușor",
-        medium:"Mediu",
-        focus:"Focus",
-        continue:"Continuă",
-        askCoach:"Întreabă coach-ul",
-        openQuiz:"Deschide quiz",
-        quizTitle:"Quiz funcțional",
-        quizLead:"Un exemplu de quiz real, inspirat de logica educațională statică din BACapp.",
-        quizMeta:"Întrebare 1 din 3",
-        quizInitial:"Alege un răspuns ca să primești feedback.",
-        nextQuestion:"Următoarea întrebare",
-        resetQuiz:"Resetează quiz",
-        tasksTitle:"Misiuni rapide",
-        tasksLead:"Taskuri inspirate din dashboard-ul de productivitate și quest-urile ARCADE OPS.",
-        task1:"Pornește o sesiune scurtă de focus",
-        task1Text:"20 minute focus + 5 minute pauză, cu timer vizibil și control simplu.",
-        routine:"Rutină",
-        task2:"Răspunde la un quiz fără stres",
-        task2Text:"Pași mici, feedback explicat și progres clar, fără presiune inutilă.",
-        study:"Studiu",
-        complete:"Completează",
-        coachTitle:"Coach local",
-        coachLead:"Rule-based, local, calm și orientat pe autonomie, inspirat de Coaching-AI.",
-        coachLabel:"Scrie ce ai nevoie acum",
-        coachPlaceholder:"Ex: Sunt blocat(ă). Dă-mi un plan simplu pentru următoarele 10 minute.",
-        sendCoach:"Generează răspuns",
-        calmMode:"Mod calm",
-        planMode:"Plan în 3 pași",
-        coachInitial:"Răspunsul coach-ului apare aici.",
-        coachNote:"Răspunsurile sunt locale și exemplificative, fără backend sau API real.",
-        a11yTitle:"Accessibility Center",
-        a11yLead:"Setări centralizate pentru citire, orientare, control și confort vizual.",
-        fontSize:"Mărime text",
-        highContrast:"Contrast ridicat",
-        highContrastText:"Crește separarea dintre elemente și text.",
-        reducedMotion:"Reducere animații",
-        reducedMotionText:"Util pentru sensibilitate la mișcare.",
-        focusAssist:"Asistență focus",
-        focusAssistText:"Păstrează secțiuni aerisite și accent pe acțiunile principale.",
-        screensTitle:"Structura paginii adaptate",
-        screensLead:"Nu doar UI frumos, ci și orientare clară pentru utilizatori cu nevoi diferite.",
-        screen1:"1. Home adaptat",
-        screen1Text:"Hero clar, butoane mari, rezumat progres, intrare rapidă în setările de accesibilitate.",
-        screen1Li1:"navigație simplă",
-        screen1Li2:"CTA clar pe mobil",
-        screen1Li3:"dark/light fără reload",
-        screen2:"2. Learning + Quiz",
-        screen2Text:"Conținut în bucăți mici, quiz cu feedback și progres vizibil.",
-        screen2Li1:"întrebări scurte",
-        screen2Li2:"feedback blând",
-        screen2Li3:"reset ușor",
-        screen3:"3. Mood + Coach",
-        screen3Text:"O zonă separată pentru reglare emoțională, taskuri și sprijin local.",
-        screen3Li1:"mood check-in",
-        screen3Li2:"coach rule-based",
-        screen3Li3:"taskuri și timer",
-        screen4:"4. Accessibility Center",
-        screen4Text:"Toate preferințele într-un singur loc pentru predictibilitate și autonomie.",
-        screen4Li1:"font resize",
-        screen4Li2:"high contrast",
-        screen4Li3:"reduced motion",
-        footer1:"Cum e gândit pentru GitHub Pages",
-        footer1Text:"Single-file, static, fără costuri și ușor de extins. Ideal pentru demo public, portofoliu sau MVP accesibil.",
-        footer2:"Ce ai putea adăuga mai departe",
-        footer2Text:"Mai multe quiz-uri pe categorii, profiluri de accesibilitate salvabile, badge-uri, mini-jocuri și export de progres."
+        brandEyebrow:'Access Arcade Coach — Flagship', brandTitle:'Aplicație accesibilă · gamificată · coach local', themeBtn:'Dark mode', openOb:'Onboarding',
+        heroTitle:'Versiune flagship pentru rutină, studiu, autonomie digitală și feedback calm.', heroLead:'Dashboard cu progres, profiluri de accesibilitate, workspace cu tab-uri, coach local, quiz, badge-uri și analytics blând, gândit mobile-first și RO/EN.',
+        heroPrimary:'Deschide workspace', heroSecondary:'Vezi badge-urile', heroNote:'Scop: o aplicație care susține persoane cu dizabilități prin structură clară, adaptări vizuale și interacțiuni previzibile.',
+        s1:'progres total', s2:'zile streak', s3:'misiuni făcute', s4:'scor quiz', quickTitle:'Panou rapid', quickTag:'Pregătit', tag1:'accesibil', tag2:'feedback calm', quickText:'Preferințele, profilul activ, taskurile și progresul sunt păstrate local pentru o experiență predictibilă.',
+        applyCalm:'Mod calm', applyFocus:'Focus mode', applyReduced:'Reduced motion', timerTitle:'Focus timer', timerText:'Sesiuni scurte și control simplu pentru focus fără presiune inutilă.',
+        dashTitle:'Dashboard accesibil', dashLead:'O combinație între energie gamificată, structură educațională și reglaj personalizat.',
+        k1:'Nivel', k1t:'Adaptive Strategist', k2:'Accesibilitate activă', k2t:'setări personalizate', k3:'Coach check-ins', k3t:'sugestii active azi', k4:'Mood activ', k4t:'ajustează tonul aplicației',
+        profilesTitle:'Profiluri de accesibilitate', profilesLead:'Poți activa rapid un profil predefinit, apoi îl poți ajusta fin din Accessibility Center.',
+        p1:'Contrast echilibrat, text 104%, focus pe claritate și ritm blând.', p2:'Contrast ridicat, text 110%, focus assist activ și layout mai sever.', p3:'Mișcare redusă, text 106%, dark mode și citire calmă.',
+        ap:'Aplică profilul', wsTitle:'Workspace principal', wsLead:'Task board, learning paths, coach și analytics într-un singur flow.', tb1:'Task board', tb2:'Paths', tb3:'Coach', tb4:'Analytics',
+        taskBoardTitle:'Task board accesibil', taskBoardText:'Bifează taskurile finalizate. Progresul se actualizează local și contribuie la XP.', rewardBtn:'Recompensează taskurile făcute', resetTasks:'Resetează taskurile',
+        missionTitle:'Misiuni rapide', missionText:'Inspirate din ARCADE OPS, dar adaptate pentru ritm calm și claritate cognitivă.', m1:'Completează rutina de start', m2:'Finalizează un mini-quiz', m3:'Folosește coach-ul pentru un plan', missionNote:'Misiunile oferă XP, dar fără feedback agresiv sau presiune inutilă.',
+        l1:'Rutina de bază', l1t:'Check-in, 10 minute focus, recap scurt.', l2:'Comunicare și orientare', l2t:'Mesaje simple, alegeri clare și secvențe previzibile.', l3:'Study Sprint + Quiz', l3t:'Conținut fragmentat, exercițiu și feedback blând.', c:'Continuă', ask:'Întreabă coach-ul', oq:'Deschide quiz',
+        coachTitle:'Coach local', coachLead:'Rule-based, calm și orientat pe autonomie, cu răspunsuri rapide și previzibile.', coachPh:'Ex: Sunt blocat(ă). Dă-mi un plan simplu pentru următoarele 10 minute.', coachSend:'Generează răspuns', coachCalm:'Mod calm', coachPlan:'Plan în 3 pași', coachInitial:'Răspunsul coach-ului apare aici.',
+        anTitle:'Analytics blând', anLead:'Vizualizare simplă a zonelor de progres, fără supraîncărcare inutilă.', b1:'Rutină', b2:'Studiu', b3:'Autonomie', sumTitle:'Rezumat local', summary:'Aplicația rezumă progresul, profilul activ și starea curentă într-un mod simplu și ușor de citit.', refreshSummary:'Actualizează rezumatul',
+        quizTitle:'Quiz extins', quizLead:'Un quiz mai bogat, cu 5 întrebări, feedback și progres vizibil.', quizMeta:'Întrebare 1 din 5', quizInitial:'Alege un răspuns ca să primești feedback.', quizNext:'Următoarea întrebare', quizReset:'Resetează quiz',
+        badgesTitle:'Badge-uri și progres', badgesLead:'Reward logic, vizibil și calm pentru a susține motivația fără penalizare agresivă.', bd1:'Starter', bd1t:'Ai pornit onboarding-ul și ai configurat aplicația.', bd2:'Focus Pilot', bd2t:'Ai folosit timerul și ai finalizat o sesiune scurtă.', bd3:'Quiz Learner', bd3t:'Ai răspuns la întrebări și ai primit feedback calm.', bd4:'Adaptive Master', bd4t:'Deblochează-l prin mai multe misiuni și setări active.',
+        a11yTitle:'Accessibility Center', a11yLead:'Setări centralizate pentru citire, orientare, control și confort vizual.', fs:'Mărime text', hc:'Contrast ridicat', hcDesc:'Crește separarea dintre elemente și text.', rm:'Reducere animații', rmDesc:'Util pentru sensibilitate la mișcare.', fa:'Asistență focus', faDesc:'Păstrează secțiuni aerisite și accent pe acțiunile principale.',
+        screensTitle:'Structura paginii adaptate', screensLead:'Fiecare zonă are un rol clar: orientare, acțiune, recap și personalizare.', sc1:'1. Home adaptat', sc1t:'Hero clar, CTA mare, KPIs și intrare rapidă în workspace.', sc2:'2. Workspace cu tab-uri', sc2t:'Task board, learning paths, coach și analytics într-un singur spațiu.', sc3:'3. Quiz + Badge-uri', sc3t:'Progres educațional clar, feedback calm și reward logic.', sc4:'4. Accessibility Center', sc4t:'Personalizare rapidă pentru confort și predictibilitate.',
+        obEyebrow:'Onboarding accesibil', obTitle:'Bine ai venit în Access Arcade Coach', close:'Închide', prev:'Înapoi', next:'Continuă'
       },
       en:{
-        skip:"Skip to content",
-        brandEyebrow:"Access Arcade Coach Premium",
-        brandTitle:"Accessible app · gamified · bilingual",
-        darkMode:"Dark mode",
-        onboardOpen:"Onboarding",
-        navQuiz:"Quiz",
-        navCoach:"Coach",
-        navA11y:"Accessibility",
-        onboardEyebrow:"Accessible onboarding",
-        onboardTitle:"Welcome to Access Arcade Coach Premium",
-        close:"Close",
-        prev:"Back",
-        next:"Continue",
-        heroEyebrow:"ARCADE OPS + BACapp + Coaching-AI",
-        heroTitle:"An accessible hub for routine, study, local coaching, and digital autonomy.",
-        heroLead:"The premium version adds onboarding, a working quiz, mood check-in, real tasks, dark mode, high contrast, text resize, reduced motion, and a mobile-first layout.",
-        heroPrimary:"See screens",
-        heroSecondary:"Start the quiz",
-        heroNoteLabel:"Direction:",
-        heroNoteText:"static, no-cost, no backend, ready for GitHub Pages and easy to extend with local data.",
-        statXp:"total progress",
-        statStreak:"streak days",
-        statMission:"missions done",
-        statQuiz:"quiz score",
-        panelTitle:"Quick panel",
-        focusReady:"Ready",
-        tagAccessible:"accessible",
-        tagBilingual:"RO / EN",
-        tagGentle:"calm feedback",
-        panelText:"Levels, progress, routine, and settings are stored locally for a predictable experience.",
-        timerTitle:"Focus timer",
-        timerReady:"Ready",
-        timerText:"Short, predictable sessions for focus without unnecessary pressure.",
-        start:"Start",
-        pause:"Pause",
-        reset:"Reset",
-        dashTitle:"Accessible dashboard",
-        dashLead:"Inspired by ARCADE OPS progression systems and BACapp's static educational structure.",
-        kpi1:"Level",
-        kpi1Text:"Adaptive Explorer",
-        kpi2:"Active accessibility",
-        kpi2Text:"custom settings",
-        kpi3:"Coach check-ins",
-        kpi3Text:"available suggestions today",
-        kpi4:"Active mood",
-        kpi4Text:"updated locally",
-        modulesTitle:"Combined modules",
-        modulesLead:"Three sources, one experience: quests, study, and a local conversational coach.",
-        mod1:"Arcade Missions",
-        mod1Text:"XP-based quests with clear progress, large actions, and readable feedback.",
-        mod1Li1:"onboarding and visible progress",
-        mod1Li2:"rewards without harsh penalties",
-        mod1Li3:"simple touch-friendly logic",
-        mod2:"Study Paths",
-        mod2Text:"Lessons and review flows inspired by BACapp and optimized for clarity.",
-        mod2Li1:"short, predictable routes",
-        mod2Li2:"working quiz with feedback",
-        mod2Li3:"local progress and simple recap",
-        mod3:"Coach Companion",
-        mod3Text:"Local coach, mood check-in, tasks, and focus timer.",
-        mod3Li1:"rule-based local replies",
-        mod3Li2:"mood + task + focus flow",
-        mod3Li3:"browser-saved preferences",
-        moodTitle:"Mood check-in",
-        moodLead:"Inspired by Coaching-AI: a simple entry point for tone, rhythm, and local recommendations.",
-        mood1:"Calm",
-        mood2:"Tired",
-        mood3:"Overwhelmed",
-        mood4:"Motivated",
-        moodText:"Choose a state and the app adjusts recommendations and feedback tone.",
-        pathsTitle:"Learning paths",
-        pathsLead:"Mobile-first, with clear hierarchy, progress, and small steps.",
-        lesson1:"Basic routine",
-        lesson1Text:"Check-in, 10-minute focus, short recap.",
-        lesson2:"Communication and orientation",
-        lesson2Text:"Simple messages, clear choices, predictable sequences.",
-        lesson3:"Study Sprint + Quiz",
-        lesson3Text:"Chunked content, exercise, and gentle feedback.",
-        easy:"Easy",
-        medium:"Medium",
-        focus:"Focus",
-        continue:"Continue",
-        askCoach:"Ask the coach",
-        openQuiz:"Open quiz",
-        quizTitle:"Working quiz",
-        quizLead:"A real quiz example inspired by BACapp's static educational logic.",
-        quizMeta:"Question 1 of 3",
-        quizInitial:"Choose an answer to receive feedback.",
-        nextQuestion:"Next question",
-        resetQuiz:"Reset quiz",
-        tasksTitle:"Quick missions",
-        tasksLead:"Tasks inspired by productivity dashboards and ARCADE OPS quest logic.",
-        task1:"Start a short focus session",
-        task1Text:"20 minutes of focus + 5-minute break, with a visible timer and simple controls.",
-        routine:"Routine",
-        task2:"Answer a quiz without stress",
-        task2Text:"Small steps, explained feedback, and clear progress without unnecessary pressure.",
-        study:"Study",
-        complete:"Complete",
-        coachTitle:"Local coach",
-        coachLead:"Rule-based, local, calm, and autonomy-oriented, inspired by Coaching-AI.",
-        coachLabel:"Write what you need right now",
-        coachPlaceholder:"Example: I feel blocked. Give me a simple plan for the next 10 minutes.",
-        sendCoach:"Generate reply",
-        calmMode:"Calm mode",
-        planMode:"3-step plan",
-        coachInitial:"The coach reply appears here.",
-        coachNote:"Replies are local and illustrative, with no backend or real API.",
-        a11yTitle:"Accessibility Center",
-        a11yLead:"Centralized settings for readability, orientation, control, and visual comfort.",
-        fontSize:"Text size",
-        highContrast:"High contrast",
-        highContrastText:"Increases separation between interface elements and text.",
-        reducedMotion:"Reduce motion",
-        reducedMotionText:"Helpful for motion sensitivity.",
-        focusAssist:"Focus assist",
-        focusAssistText:"Keeps sections airy and highlights the main actions.",
-        screensTitle:"Adapted page structure",
-        screensLead:"Not just a pretty UI, but clearer orientation for users with different needs.",
-        screen1:"1. Adapted home",
-        screen1Text:"Clear hero, large buttons, progress summary, and quick entry into accessibility settings.",
-        screen1Li1:"simple navigation",
-        screen1Li2:"clear mobile CTA",
-        screen1Li3:"dark/light without reload",
-        screen2:"2. Learning + Quiz",
-        screen2Text:"Chunked content, a feedback-driven quiz, and visible progress.",
-        screen2Li1:"short questions",
-        screen2Li2:"gentle feedback",
-        screen2Li3:"easy reset",
-        screen3:"3. Mood + Coach",
-        screen3Text:"A separate zone for emotional regulation, tasks, and local support.",
-        screen3Li1:"mood check-in",
-        screen3Li2:"rule-based coach",
-        screen3Li3:"tasks and timer",
-        screen4:"4. Accessibility Center",
-        screen4Text:"All preferences in one place for predictability and autonomy.",
-        screen4Li1:"font resize",
-        screen4Li2:"high contrast",
-        screen4Li3:"reduced motion",
-        footer1:"How it is built for GitHub Pages",
-        footer1Text:"Single-file, static, cost-free, and easy to extend. Ideal for a public demo, portfolio, or accessible MVP.",
-        footer2:"What you could add next",
-        footer2Text:"More category-based quizzes, savable accessibility profiles, badges, mini-games, and progress export."
+        brandEyebrow:'Access Arcade Coach — Flagship', brandTitle:'Accessible app · gamified · local coach', themeBtn:'Dark mode', openOb:'Onboarding',
+        heroTitle:'Flagship version for routine, study, digital autonomy, and calm feedback.', heroLead:'Progress dashboard, accessibility profiles, tabbed workspace, local coach, quiz, badges, and gentle analytics built mobile-first and RO/EN.',
+        heroPrimary:'Open workspace', heroSecondary:'See badges', heroNote:'Goal: an app that supports people with disabilities through clear structure, visual adaptations, and predictable interactions.',
+        s1:'total progress', s2:'streak days', s3:'missions done', s4:'quiz score', quickTitle:'Quick panel', quickTag:'Ready', tag1:'accessible', tag2:'calm feedback', quickText:'Preferences, active profile, tasks, and progress are stored locally for a predictable experience.',
+        applyCalm:'Calm mode', applyFocus:'Focus mode', applyReduced:'Reduced motion', timerTitle:'Focus timer', timerText:'Short sessions and simple controls for focus without unnecessary pressure.',
+        dashTitle:'Accessible dashboard', dashLead:'A combination of gamified energy, educational structure, and personalized tuning.',
+        k1:'Level', k1t:'Adaptive Strategist', k2:'Active accessibility', k2t:'custom settings', k3:'Coach check-ins', k3t:'active suggestions today', k4:'Active mood', k4t:'adjusts the app tone',
+        profilesTitle:'Accessibility profiles', profilesLead:'You can quickly activate a preset profile, then fine-tune it in the Accessibility Center.',
+        p1:'Balanced contrast, 104% text, focused on clarity and gentle pace.', p2:'High contrast, 110% text, active focus assist, and stronger emphasis.', p3:'Reduced motion, 106% text, dark mode, and calmer reading comfort.',
+        ap:'Apply profile', wsTitle:'Main workspace', wsLead:'Task board, learning paths, coach, and analytics in one flow.', tb1:'Task board', tb2:'Paths', tb3:'Coach', tb4:'Analytics',
+        taskBoardTitle:'Accessible task board', taskBoardText:'Check completed tasks. Progress updates locally and contributes to XP.', rewardBtn:'Reward completed tasks', resetTasks:'Reset tasks',
+        missionTitle:'Quick missions', missionText:'Inspired by ARCADE OPS, but adapted for calm pacing and cognitive clarity.', m1:'Complete the start routine', m2:'Finish a mini quiz', m3:'Use the coach for a plan', missionNote:'Missions give XP without harsh feedback or unnecessary pressure.',
+        l1:'Basic routine', l1t:'Check-in, 10-minute focus, short recap.', l2:'Communication and orientation', l2t:'Simple messages, clear choices, and predictable sequences.', l3:'Study Sprint + Quiz', l3t:'Chunked content, exercise, and gentle feedback.', c:'Continue', ask:'Ask the coach', oq:'Open quiz',
+        coachTitle:'Local coach', coachLead:'Rule-based, calm, autonomy-oriented, with fast and predictable replies.', coachPh:'Example: I feel blocked. Give me a simple plan for the next 10 minutes.', coachSend:'Generate reply', coachCalm:'Calm mode', coachPlan:'3-step plan', coachInitial:'The coach reply appears here.',
+        anTitle:'Gentle analytics', anLead:'A simple view of progress zones without unnecessary overload.', b1:'Routine', b2:'Study', b3:'Autonomy', sumTitle:'Local summary', summary:'The app summarizes progress, the active profile, and the current state in a simple readable way.', refreshSummary:'Refresh summary',
+        quizTitle:'Extended quiz', quizLead:'A richer quiz with 5 questions, feedback, and visible progress.', quizMeta:'Question 1 of 5', quizInitial:'Choose an answer to receive feedback.', quizNext:'Next question', quizReset:'Reset quiz',
+        badgesTitle:'Badges and progress', badgesLead:'Visible, calm rewards that support motivation without harsh penalties.', bd1:'Starter', bd1t:'You launched onboarding and configured the app.', bd2:'Focus Pilot', bd2t:'You used the timer and completed a short session.', bd3:'Quiz Learner', bd3t:'You answered questions and received calm feedback.', bd4:'Adaptive Master', bd4t:'Unlock it with more missions and active settings.',
+        a11yTitle:'Accessibility Center', a11yLead:'Centralized settings for readability, orientation, control, and visual comfort.', fs:'Text size', hc:'High contrast', hcDesc:'Increases separation between elements and text.', rm:'Reduce motion', rmDesc:'Helpful for motion sensitivity.', fa:'Focus assist', faDesc:'Keeps sections airy and highlights the main actions.',
+        screensTitle:'Adapted page structure', screensLead:'Each zone has a clear role: orientation, action, recap, and personalization.', sc1:'1. Adapted home', sc1t:'Clear hero, strong CTA, KPIs, and fast entry into the workspace.', sc2:'2. Tabbed workspace', sc2t:'Task board, learning paths, coach, and analytics in one space.', sc3:'3. Quiz + Badges', sc3t:'Clear learning progress, calm feedback, and visible rewards.', sc4:'4. Accessibility Center', sc4t:'Fast personalization for comfort and predictability.',
+        obEyebrow:'Accessible onboarding', obTitle:'Welcome to Access Arcade Coach', close:'Close', prev:'Back', next:'Continue'
       }
     };
 
-    const onboardingSteps = {
+    const onboarding = {
       ro:[
-        "Acest hub combină progresul de tip quest, învățarea ghidată și un coach local pentru a susține rutina și autonomia digitală.",
-        "Poți începe cu mood check-in, apoi cu un traseu de învățare sau un quiz scurt. Totul este gândit mobile-first și cu butoane mari.",
-        "Setările de accesibilitate sunt centralizate: contrast ridicat, dark mode, text resize și reducerea animațiilor.",
-        "Progresul, mood-ul, scorul la quiz și preferințele sunt salvate local, ca experiența să rămână previzibilă și calmă."
+        'Acest hub combină progresul de tip quest, învățarea ghidată și un coach local pentru a susține rutina și autonomia digitală.',
+        'Workspace-ul este organizat pe tab-uri: task board, paths, coach și analytics. Asta reduce aglomerarea și face orientarea mai clară.',
+        'Poți activa rapid un profil de accesibilitate, apoi îl poți ajusta fin: contrast, motion, font size și focus assist.',
+        'Quiz-ul, taskurile, profilul activ, mood-ul și progresul sunt salvate local pentru o experiență calmă și predictibilă.'
       ],
       en:[
-        "This hub combines quest-style progression, guided learning, and a local coach to support routine and digital autonomy.",
-        "You can start with mood check-in, then go into a learning path or a short quiz. Everything is mobile-first with large actions.",
-        "Accessibility settings are centralized: high contrast, dark mode, text resize, and reduced motion.",
-        "Progress, mood, quiz score, and preferences are stored locally to keep the experience predictable and calm."
+        'This hub combines quest-style progress, guided learning, and a local coach to support routine and digital autonomy.',
+        'The workspace is organized into tabs: task board, paths, coach, and analytics. This reduces clutter and improves orientation.',
+        'You can quickly activate an accessibility profile, then fine-tune contrast, motion, font size, and focus assist.',
+        'Quiz progress, tasks, active profile, mood, and progress are saved locally for a calm and predictable experience.'
       ]
     };
 
     const quizzes = {
       ro:[
-        {
-          q:"Care este cea mai bună abordare pentru un utilizator copleșit de multe informații?",
-          options:["Să vadă toate panourile simultan","Să primească pași mici și un singur CTA clar","Să primească mai multe animații pentru orientare"],
-          correct:1,
-          feedbackCorrect:"Corect. Pașii mici și un CTA clar reduc supraîncărcarea cognitivă.",
-          feedbackWrong:"Mai bine alegi pași mici și un CTA clar. Asta scade fricțiunea și ajută orientarea."
-        },
-        {
-          q:"Ce setare este utilă pentru sensibilitate la mișcare?",
-          options:["High contrast","Reduce motion","Light mode only"],
-          correct:1,
-          feedbackCorrect:"Corect. Reduce motion este util pentru utilizatorii sensibili la animații sau tranziții.",
-          feedbackWrong:"Răspunsul mai potrivit este Reduce motion."
-        },
-        {
-          q:"De ce este utilă salvarea preferințelor în localStorage într-o aplicație accesibilă?",
-          options:["Pentru o experiență mai predictibilă la revenire","Doar pentru design vizual","Ca să mărești scorul fără logică"],
-          correct:0,
-          feedbackCorrect:"Corect. Persistența preferințelor reduce efortul repetitiv și crește predictibilitatea.",
-          feedbackWrong:"Varianta bună este salvarea pentru o experiență predictibilă la revenire."
-        }
+        {q:'Care este cea mai bună abordare pentru un utilizator copleșit de multe informații?', o:['Să vadă toate panourile simultan','Să primească pași mici și un singur CTA clar','Să primească mai multe animații pentru orientare'], c:1, good:'Corect. Pașii mici și un CTA clar reduc supraîncărcarea cognitivă.', bad:'Mai bine alegi pași mici și un CTA clar. Asta scade fricțiunea și ajută orientarea.'},
+        {q:'Ce setare este utilă pentru sensibilitate la mișcare?', o:['High contrast','Reduce motion','Light mode only'], c:1, good:'Corect. Reduce motion este util pentru utilizatorii sensibili la animații sau tranziții.', bad:'Răspunsul mai potrivit este Reduce motion.'},
+        {q:'De ce este utilă salvarea preferințelor în localStorage?', o:['Pentru o experiență mai predictibilă la revenire','Doar pentru design vizual','Ca să mărești scorul fără logică'], c:0, good:'Corect. Persistența preferințelor reduce efortul repetitiv și crește predictibilitatea.', bad:'Varianta bună este salvarea pentru o experiență predictibilă la revenire.'},
+        {q:'Ce face un workspace cu tab-uri mai accesibil?', o:['Ascunde tot conținutul important','Separă zonele pe roluri și reduce aglomerarea','Adaugă mai multe efecte vizuale'], c:1, good:'Corect. Tab-urile pot simplifica orientarea și pot grupa conținutul logic.', bad:'Workspace-ul cu tab-uri ajută când separă zonele pe roluri și reduce aglomerarea.'},
+        {q:'Ce tip de feedback e mai potrivit într-o aplicație accesibilă?', o:['Penalizare agresivă și mesaje dure','Feedback calm, clar și orientat pe următorul pas','Mesaje vagi fără direcție'], c:1, good:'Corect. Feedback-ul calm și clar susține autonomia și reduce stresul.', bad:'Varianta mai potrivită este feedback calm, clar și orientat pe următorul pas.'}
       ],
       en:[
-        {
-          q:"What is the best approach for a user overwhelmed by too much information?",
-          options:["Show all panels at once","Offer small steps and one clear CTA","Add more animations for orientation"],
-          correct:1,
-          feedbackCorrect:"Correct. Small steps and one clear CTA reduce cognitive overload.",
-          feedbackWrong:"A better choice is small steps and one clear CTA. It lowers friction and improves orientation."
-        },
-        {
-          q:"Which setting is useful for motion sensitivity?",
-          options:["High contrast","Reduce motion","Light mode only"],
-          correct:1,
-          feedbackCorrect:"Correct. Reduce motion helps users who are sensitive to animation or transitions.",
-          feedbackWrong:"The better answer is Reduce motion."
-        },
-        {
-          q:"Why is saving preferences in localStorage helpful in an accessible app?",
-          options:["For a more predictable return experience","Only for visual design","To increase score without logic"],
-          correct:0,
-          feedbackCorrect:"Correct. Persisting preferences reduces repeated effort and increases predictability.",
-          feedbackWrong:"The correct idea is saving preferences for a predictable return experience."
-        }
+        {q:'What is the best approach for a user overwhelmed by too much information?', o:['Show all panels at once','Offer small steps and one clear CTA','Add more animations for orientation'], c:1, good:'Correct. Small steps and one clear CTA reduce cognitive overload.', bad:'A better choice is small steps and one clear CTA.'},
+        {q:'Which setting is useful for motion sensitivity?', o:['High contrast','Reduce motion','Light mode only'], c:1, good:'Correct. Reduce motion helps users sensitive to animation or transitions.', bad:'The better answer is Reduce motion.'},
+        {q:'Why is saving preferences in localStorage useful?', o:['For a more predictable return experience','Only for visual design','To raise score without logic'], c:0, good:'Correct. Preference persistence reduces repeated effort and improves predictability.', bad:'The better answer is saving them for a predictable return experience.'},
+        {q:'What makes a tabbed workspace more accessible?', o:['It hides all important content','It separates zones by purpose and reduces clutter','It adds more visual effects'], c:1, good:'Correct. Tabs can simplify orientation and group content logically.', bad:'A tabbed workspace helps when it separates zones by purpose and reduces clutter.'},
+        {q:'What kind of feedback fits an accessible app better?', o:['Harsh penalties and hard messages','Calm, clear feedback focused on the next step','Vague messages with no direction'], c:1, good:'Correct. Calm and clear feedback supports autonomy and lowers stress.', bad:'The better answer is calm, clear feedback focused on the next step.'}
       ]
     };
 
-    const state = {
-      lang: localStorage.getItem('aacp-lang') || 'ro',
-      theme: localStorage.getItem('aacp-theme') || 'dark',
-      contrast: localStorage.getItem('aacp-contrast') || 'normal',
-      fontSize: Number(localStorage.getItem('aacp-font')) || 100,
-      reducedMotion: localStorage.getItem('aacp-motion') === 'reduced',
-      focusAssist: localStorage.getItem('aacp-focus') !== 'off',
-      xp: Number(localStorage.getItem('aacp-xp')) || 320,
-      streak: Number(localStorage.getItem('aacp-streak')) || 7,
-      missions: Number(localStorage.getItem('aacp-missions')) || 18,
-      quizIndex: Number(localStorage.getItem('aacp-quiz-index')) || 0,
-      quizScore: Number(localStorage.getItem('aacp-quiz-score')) || 0,
-      mood: localStorage.getItem('aacp-mood') || '🙂',
-      onboardingSeen: localStorage.getItem('aacp-onboarding') === 'done',
-      onboardingIndex: 0
+    const taskSeeds = {
+      ro:['Check-in de 1 minut','10 minute focus','Quiz scurt cu feedback calm','Pauză scurtă și recap','Întreabă coach-ul pentru următorul pas'],
+      en:['1-minute check-in','10 minutes of focus','Short quiz with calm feedback','Short break and recap','Ask the coach for the next step']
     };
 
-    const body = document.body;
-    const langToggle = document.getElementById('langToggle');
-    const themeToggle = document.getElementById('themeToggle');
-    const onboardingToggle = document.getElementById('onboardingToggle');
-    const onboardingOverlay = document.getElementById('onboardingOverlay');
-    const onboardingContent = document.getElementById('onboardingContent');
-    const prevOnboarding = document.getElementById('prevOnboarding');
-    const nextOnboarding = document.getElementById('nextOnboarding');
-    const closeOnboarding = document.getElementById('closeOnboarding');
 
-    const contrastToggle = document.getElementById('contrastToggle');
-    const motionToggle = document.getElementById('motionToggle');
-    const focusToggle = document.getElementById('focusToggle');
-    const fontSize = document.getElementById('fontSize');
-    const fontSizeLabel = document.getElementById('fontSizeLabel');
-
-    const xpValue = document.getElementById('xpValue');
-    const streakValue = document.getElementById('streakValue');
-    const missionValue = document.getElementById('missionValue');
-    const quizValue = document.getElementById('quizValue');
-    const a11yCount = document.getElementById('a11yCount');
-    const moodValue = document.getElementById('moodValue');
-
-    const coachInput = document.getElementById('coachInput');
-    const coachSend = document.getElementById('coachSend');
-    const coachCalm = document.getElementById('coachCalm');
-    const coachPlan = document.getElementById('coachPlan');
-    const coachResponse = document.getElementById('coachResponse');
-    const coachCount = document.getElementById('coachCount');
-
-    const heroProgress = document.getElementById('heroProgress');
-    const moodResponse = document.getElementById('moodResponse');
-
-    const quizQuestion = document.getElementById('quizQuestion');
-    const quizMeta = document.getElementById('quizMeta');
-    const quizCounter = document.getElementById('quizCounter');
-    const quizOptions = document.getElementById('quizOptions');
-    const quizFeedback = document.getElementById('quizFeedback');
-    const quizNext = document.getElementById('quizNext');
-    const quizReset = document.getElementById('quizReset');
-
-    const timerDisplay = document.getElementById('timerDisplay');
-    const timerState = document.getElementById('timerState');
-    const startTimer = document.getElementById('startTimer');
-    const pauseTimer = document.getElementById('pauseTimer');
-    const resetTimer = document.getElementById('resetTimer');
-
-    let timerSeconds = 20 * 60;
-    let timerInterval = null;
-
-    function applyI18n(){
-      document.documentElement.lang = state.lang;
-      body.dataset.lang = state.lang;
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.dataset.i18n;
-        if(i18n[state.lang][key]) el.textContent = i18n[state.lang][key];
-      });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
-        const key = el.dataset.i18nPlaceholder;
-        if(i18n[state.lang][key]) el.setAttribute('placeholder', i18n[state.lang][key]);
-      });
-      langToggle.textContent = state.lang === 'ro' ? 'RO / EN' : 'EN / RO';
-      renderOnboarding();
-      renderQuiz();
-      renderMoodMessage();
-      if(!coachResponse.dataset.userGenerated){
-        coachResponse.textContent = i18n[state.lang].coachInitial;
+    const mandalaTones = {
+      ro:{
+        calm:'Mandala calmă: urmărește ritmul cercurilor și schimbă doar câteva elemente, fără grabă.',
+        focus:'Mandala focus: colorează vizual din exterior spre centru și respiră lent între pași.',
+        energy:'Mandala energy: alternează nodurile și creează un pattern viu, dar clar.'
+      },
+      en:{
+        calm:'Calm mandala: follow the circle rhythm and change only a few elements without rushing.',
+        focus:'Focus mandala: work visually from the outside toward the center and breathe slowly between steps.',
+        energy:'Energy mandala: alternate the nodes and build a vivid but clear pattern.'
       }
-      if(!timerInterval){
-        timerState.textContent = i18n[state.lang].timerReady;
-      }
-    }
+    };
 
-    function applyTheme(){
-      body.dataset.theme = state.theme;
-      localStorage.setItem('aacp-theme', state.theme);
+    const scratchIdeas = {
+      ro:{
+        story:'Idee: personajul pornește într-o misiune de dimineață, găsește 3 pași clari și primește un badge calm.',
+        motion:'Idee: creează o secvență cu mișcare lentă, pauză și feedback vizual simplu.',
+        dialog:'Idee: construiește un dialog între utilizator și coach cu 3 replici utile și blânde.'
+      },
+      en:{
+        story:'Idea: a character starts a morning mission, finds 3 clear steps, and earns a calm badge.',
+        motion:'Idea: build a sequence with gentle movement, a pause, and simple visual feedback.',
+        dialog:'Idea: create a dialogue between the user and the coach with 3 useful and gentle lines.'
+      }
+    };
+
+    const state = {
+      lang: localStorage.getItem('aac_flag_lang') || 'ro',
+      theme: localStorage.getItem('aac_flag_theme') || 'dark',
+      contrast: localStorage.getItem('aac_flag_contrast') || 'normal',
+      fontSize: Number(localStorage.getItem('aac_flag_font')) || 100,
+      reducedMotion: localStorage.getItem('aac_flag_motion') === 'reduced',
+      focusAssist: localStorage.getItem('aac_flag_focus') !== 'off',
+      xp: Number(localStorage.getItem('aac_flag_xp')) || 420,
+      streak: Number(localStorage.getItem('aac_flag_streak')) || 9,
+      missions: Number(localStorage.getItem('aac_flag_missions')) || 24,
+      quizIndex: Number(localStorage.getItem('aac_flag_qi')) || 0,
+      quizScore: Number(localStorage.getItem('aac_flag_qs')) || 0,
+      mood: localStorage.getItem('aac_flag_mood') || '🙂',
+      profile: localStorage.getItem('aac_flag_profile') || 'calm',
+      onboardingSeen: localStorage.getItem('aac_flag_onboarding') === 'done',
+      onboardingIndex: 0,
+      tasks: JSON.parse(localStorage.getItem('aac_flag_tasks') || '[]')
+    };
+
+    const ids = id => document.getElementById(id);
+    function ensureTasks(){ if(!state.tasks.length){ state.tasks = taskSeeds[state.lang].map((text, i)=>({id:i+1,text,done:false})); } }
+    function save(){
+      localStorage.setItem('aac_flag_lang', state.lang);
+      localStorage.setItem('aac_flag_theme', state.theme);
+      localStorage.setItem('aac_flag_contrast', state.contrast);
+      localStorage.setItem('aac_flag_font', state.fontSize);
+      localStorage.setItem('aac_flag_motion', state.reducedMotion ? 'reduced' : 'full');
+      localStorage.setItem('aac_flag_focus', state.focusAssist ? 'on' : 'off');
+      localStorage.setItem('aac_flag_xp', state.xp);
+      localStorage.setItem('aac_flag_streak', state.streak);
+      localStorage.setItem('aac_flag_missions', state.missions);
+      localStorage.setItem('aac_flag_qi', state.quizIndex);
+      localStorage.setItem('aac_flag_qs', state.quizScore);
+      localStorage.setItem('aac_flag_mood', state.mood);
+      localStorage.setItem('aac_flag_profile', state.profile);
+      localStorage.setItem('aac_flag_tasks', JSON.stringify(state.tasks));
     }
-    function applyContrast(){
-      body.dataset.contrast = state.contrast;
-      contrastToggle.checked = state.contrast === 'high';
-      localStorage.setItem('aacp-contrast', state.contrast);
-    }
-    function applyFont(){
+    function applyTheme(){ document.body.dataset.theme = state.theme; }
+    function applyA11y(){
+      document.body.dataset.contrast = state.contrast;
       document.documentElement.style.setProperty('--font-size', state.fontSize + '%');
-      fontSize.value = state.fontSize;
-      fontSizeLabel.textContent = state.fontSize + '%';
-      localStorage.setItem('aacp-font', String(state.fontSize));
-    }
-    function applyMotion(){
       document.documentElement.style.setProperty('--motion', state.reducedMotion ? '0' : '1');
-      motionToggle.checked = state.reducedMotion;
-      localStorage.setItem('aacp-motion', state.reducedMotion ? 'reduced' : 'full');
+      ids('contrastToggle').checked = state.contrast === 'high';
+      ids('motionToggle').checked = state.reducedMotion;
+      ids('focusToggle').checked = state.focusAssist;
+      ids('fontSize').value = state.fontSize;
+      ids('fontSizeLabel').textContent = state.fontSize + '%';
     }
-    function applyFocus(){
-      focusToggle.checked = state.focusAssist;
-      localStorage.setItem('aacp-focus', state.focusAssist ? 'on' : 'off');
-    }
-
     function updateStats(){
-      xpValue.textContent = `${state.xp} XP`;
-      streakValue.textContent = String(state.streak);
-      missionValue.textContent = String(state.missions);
-      quizValue.textContent = `${state.quizScore}/3`;
-      moodValue.textContent = state.mood;
-      const activeA11y = [
-        true,
-        true,
-        state.theme === 'dark',
-        state.contrast === 'high',
-        state.reducedMotion,
-        state.focusAssist,
-        state.fontSize !== 100,
-        true
-      ].filter(Boolean).length;
-      a11yCount.textContent = String(activeA11y);
-      coachCount.textContent = state.mood === '😣' ? '5' : state.mood === '😕' ? '4' : '3';
-      heroProgress.style.width = `${Math.min(100, 40 + Math.round(state.missions * 1.6))}%`;
-
-      localStorage.setItem('aacp-lang', state.lang);
-      localStorage.setItem('aacp-xp', String(state.xp));
-      localStorage.setItem('aacp-streak', String(state.streak));
-      localStorage.setItem('aacp-missions', String(state.missions));
-      localStorage.setItem('aacp-quiz-index', String(state.quizIndex));
-      localStorage.setItem('aacp-quiz-score', String(state.quizScore));
-      localStorage.setItem('aacp-mood', state.mood);
+      ids('xpValue').textContent = `${state.xp} XP`; ids('streakValue').textContent = state.streak; ids('missionValue').textContent = state.missions; ids('quizValue').textContent = `${state.quizScore}/5`;
+      ids('moodValue').textContent = state.mood;
+      ids('a11yCount').textContent = [true,true,state.theme==='dark',state.contrast==='high',state.reducedMotion,state.focusAssist,state.fontSize!==100,true].filter(Boolean).length;
+      ids('coachCount').textContent = state.mood === '😣' ? '5' : state.mood === '😕' ? '4' : '3';
+      ids('heroProgress').style.width = `${Math.min(100, 42 + Math.round(state.missions * 1.6))}%`;
+      save();
     }
+    function setLang(){
+      const t = i18n[state.lang];
+      ids('brandEyebrow').textContent = t.brandEyebrow; ids('brandTitle').textContent = t.brandTitle; ids('themeBtn').textContent = t.themeBtn; ids('openOb').textContent = t.openOb;
+      ids('heroTitle').textContent = t.heroTitle; ids('heroLead').textContent = t.heroLead; ids('heroPrimary').textContent = t.heroPrimary; ids('heroSecondary').textContent = t.heroSecondary; ids('heroNote').textContent = t.heroNote;
+      ['s1','s2','s3','s4','quickTitle','quickTag','tag1','tag2','quickText','applyCalm','applyFocus','applyReduced','timerTitle','timerText','dashTitle','dashLead','k1','k1t','k2','k2t','k3','k3t','k4','k4t','profilesTitle','profilesLead','p1','p2','p3','wsTitle','wsLead','tb1','tb2','tb3','tb4','taskBoardTitle','taskBoardText','rewardBtn','resetTasks','missionTitle','missionText','m1','m2','m3','missionNote','l1','l1t','l2','l2t','l3','l3t','c1','c2','c3','ac1','ac2','oq','coachTitle','coachLead','coachSend','coachCalm','coachPlan','anTitle','anLead','b1','b2','b3','sumTitle','refreshSummary','quizTitle','quizLead','badgesTitle','badgesLead','bd1','bd1t','bd2','bd2t','bd3','bd3t','bd4','bd4t','a11yTitle','a11yLead','fsLabelText','hcText','hcDesc','rmText','rmDesc','faText','faDesc','screensTitle','screensLead','sc1','sc1t','sc2','sc2t','sc3','sc3t','sc4','sc4t','obEyebrow','obTitle','closeOb','prevOb','nextOb'].forEach(k=>{ if(ids(k) && t[k.replace(/(Btn|Text|Lead|Title|Desc|Tag|Note)?$/,'')]){} });
+      ids('s1').textContent=t.s1;ids('s2').textContent=t.s2;ids('s3').textContent=t.s3;ids('s4').textContent=t.s4;ids('quickTitle').textContent=t.quickTitle;ids('quickTag').textContent=t.quickTag;ids('tag1').textContent=t.tag1;ids('tag2').textContent=t.tag2;ids('quickText').textContent=t.quickText;ids('applyCalm').textContent=t.applyCalm;ids('applyFocus').textContent=t.applyFocus;ids('applyReduced').textContent=t.applyReduced;ids('timerTitle').textContent=t.timerTitle;ids('timerText').textContent=t.timerText;
+      ids('dashTitle').textContent=t.dashTitle;ids('dashLead').textContent=t.dashLead;ids('k1').textContent=t.k1;ids('k1t').textContent=t.k1t;ids('k2').textContent=t.k2;ids('k2t').textContent=t.k2t;ids('k3').textContent=t.k3;ids('k3t').textContent=t.k3t;ids('k4').textContent=t.k4;ids('k4t').textContent=t.k4t;
+      ids('profilesTitle').textContent=t.profilesTitle;ids('profilesLead').textContent=t.profilesLead;ids('p1').textContent=t.p1;ids('p2').textContent=t.p2;ids('p3').textContent=t.p3;
+      [ids('ap1'),ids('ap2'),ids('ap3')].forEach(el=>el.textContent=t.ap);
+      ids('wsTitle').textContent=t.wsTitle;ids('wsLead').textContent=t.wsLead;ids('tb1').textContent=t.tb1;ids('tb2').textContent=t.tb2;ids('tb3').textContent=t.tb3;ids('tb4').textContent=t.tb4;
+      ids('taskBoardTitle').textContent=t.taskBoardTitle;ids('taskBoardText').textContent=t.taskBoardText;ids('rewardBtn').textContent=t.rewardBtn;ids('resetTasks').textContent=t.resetTasks;ids('missionTitle').textContent=t.missionTitle;ids('missionText').textContent=t.missionText;ids('m1').textContent=t.m1;ids('m2').textContent=t.m2;ids('m3').textContent=t.m3;ids('missionNote').textContent=t.missionNote;
+      ids('l1').textContent=t.l1;ids('l1t').textContent=t.l1t;ids('l2').textContent=t.l2;ids('l2t').textContent=t.l2t;ids('l3').textContent=t.l3;ids('l3t').textContent=t.l3t;ids('c1').textContent=t.c;ids('c2').textContent=t.c;ids('c3').textContent=t.c;ids('ac1').textContent=t.ask;ids('ac2').textContent=t.ask;ids('oq').textContent=t.oq;
+      ids('coachTitle').textContent=t.coachTitle;ids('coachLead').textContent=t.coachLead;ids('coachInput').placeholder=t.coachPh;ids('coachSend').textContent=t.coachSend;ids('coachCalm').textContent=t.coachCalm;ids('coachPlan').textContent=t.coachPlan; if(!ids('coachResponse').dataset.userGenerated) ids('coachResponse').textContent=t.coachInitial;
+      ids('anTitle').textContent=t.anTitle;ids('anLead').textContent=t.anLead;ids('b1').textContent=t.b1;ids('b2').textContent=t.b2;ids('b3').textContent=t.b3;ids('sumTitle').textContent=t.sumTitle;ids('refreshSummary').textContent=t.refreshSummary;
+      ids('quizTitle').textContent=t.quizTitle;ids('quizLead').textContent=t.quizLead;ids('badgesTitle').textContent=t.badgesTitle;ids('badgesLead').textContent=t.badgesLead;ids('bd1').textContent=t.bd1;ids('bd1t').textContent=t.bd1t;ids('bd2').textContent=t.bd2;ids('bd2t').textContent=t.bd2t;ids('bd3').textContent=t.bd3;ids('bd3t').textContent=t.bd3t;ids('bd4').textContent=t.bd4;ids('bd4t').textContent=t.bd4t;
+      ids('a11yTitle').textContent=t.a11yTitle;ids('a11yLead').textContent=t.a11yLead;ids('fsLabelText').textContent=t.fs;ids('hcText').textContent=t.hc;ids('hcDesc').textContent=t.hcDesc;ids('rmText').textContent=t.rm;ids('rmDesc').textContent=t.rmDesc;ids('faText').textContent=t.fa;ids('faDesc').textContent=t.faDesc;
+      ids('screensTitle').textContent=t.screensTitle;ids('screensLead').textContent=t.screensLead;ids('sc1').textContent=t.sc1;ids('sc1t').textContent=t.sc1t;ids('sc2').textContent=t.sc2;ids('sc2t').textContent=t.sc2t;ids('sc3').textContent=t.sc3;ids('sc3t').textContent=t.sc3t;ids('sc4').textContent=t.sc4;ids('sc4t').textContent=t.sc4t;
+      ids('obEyebrow').textContent=t.obEyebrow;ids('obTitle').textContent=t.obTitle;ids('closeOb').textContent=t.close;ids('prevOb').textContent=t.prev;
 
-    function openOnboarding(){
-      onboardingOverlay.hidden = false;
-    }
-    function closeOnboardingModal(){
-      onboardingOverlay.hidden = true;
-      localStorage.setItem('aacp-onboarding', 'done');
-      state.onboardingSeen = true;
+      ids('tb5').textContent = state.lang === 'ro' ? 'Mandala' : 'Mandala';
+      ids('tb6').textContent = state.lang === 'ro' ? 'Scratch Lab' : 'Scratch Lab';
+      ids('mandalaTitle').textContent = state.lang === 'ro' ? 'Mandala Calm' : 'Mandala Calm';
+      ids('mandalaLead').textContent = state.lang === 'ro' ? 'Un modul de reglare și concentrare bazat pe mișcare lentă, simetrie și alegere simplă de culori.' : 'A regulation and focus module based on slow motion, symmetry, and simple color choice.';
+      ids('mandalaCalm').textContent = state.lang === 'ro' ? 'Calm' : 'Calm';
+      ids('mandalaFocus').textContent = state.lang === 'ro' ? 'Focus' : 'Focus';
+      ids('mandalaEnergy').textContent = state.lang === 'ro' ? 'Energy' : 'Energy';
+      ids('mandalaBoardTitle').textContent = state.lang === 'ro' ? 'Mandala Board' : 'Mandala Board';
+      ids('mandalaBoardText').textContent = state.lang === 'ro' ? 'Tap sau click pe cercuri pentru a schimba starea vizuală. Gândit ca micro-pauză de focus, nu ca test de performanță.' : 'Tap or click the circles to change their visual state. Designed as a micro focus break, not a performance test.';
+      ids('mandalaReset').textContent = state.lang === 'ro' ? 'Reset Mandala' : 'Reset Mandala';
+      ids('mandalaReward').textContent = state.lang === 'ro' ? 'Finalizează sesiunea' : 'Finish session';
+      ids('scratchTitle').textContent = state.lang === 'ro' ? 'Scratch Lab' : 'Scratch Lab';
+      ids('scratchLead').textContent = state.lang === 'ro' ? 'O zonă creativă inspirată de logica block-based: story prompt, secvențe și micro-interacțiuni pentru învățare expresivă.' : 'A creative zone inspired by block-based logic: story prompts, sequences, and micro-interactions for expressive learning.';
+      ids('scratchStory').textContent = state.lang === 'ro' ? 'Story' : 'Story';
+      ids('scratchMotion').textContent = state.lang === 'ro' ? 'Motion' : 'Motion';
+      ids('scratchDialog').textContent = state.lang === 'ro' ? 'Dialog' : 'Dialog';
+      ids('scratchBoardTitle').textContent = state.lang === 'ro' ? 'Scratch Sequence Builder' : 'Scratch Sequence Builder';
+      ids('scratchBoardText').textContent = state.lang === 'ro' ? 'Construiește un flow simplu cu blocuri logice: start, move, say, celebrate. Gândit ca activitate creativă și clară.' : 'Build a simple flow with logical blocks: start, move, say, celebrate. Designed as a clear creative activity.';
+      ids('scratchReset').textContent = state.lang === 'ro' ? 'Reset Flow' : 'Reset Flow';
+      ids('scratchReward').textContent = state.lang === 'ro' ? 'Save Creative Flow' : 'Save Creative Flow';
+
+      ids('langBtn').textContent = state.lang === 'ro' ? 'RO / EN' : 'EN / RO';
+      renderOnboarding(); renderQuiz(); renderTasks(true); renderSummary();
     }
     function renderOnboarding(){
-      onboardingContent.textContent = onboardingSteps[state.lang][state.onboardingIndex];
-      const dots = document.querySelectorAll('.step-dot');
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === state.onboardingIndex));
-      prevOnboarding.disabled = state.onboardingIndex === 0;
-      nextOnboarding.textContent = state.onboardingIndex === onboardingSteps[state.lang].length - 1
-        ? (state.lang === 'ro' ? 'Finalizează' : 'Finish')
-        : i18n[state.lang].next;
+      ids('obText').textContent = onboarding[state.lang][state.onboardingIndex];
+      document.querySelectorAll('.dot').forEach((dot,i)=>dot.classList.toggle('active', i===state.onboardingIndex));
+      ids('nextOb').textContent = state.onboardingIndex === onboarding[state.lang].length - 1 ? (state.lang === 'ro' ? 'Finalizează' : 'Finish') : i18n[state.lang].next;
+      ids('prevOb').disabled = state.onboardingIndex === 0;
     }
-
-    function renderMoodMessage(){
-      const map = {
-        ro:{
-          "🙂":"Stare calmă detectată. Poți continua cu un traseu sau un quiz scurt.",
-          "😕":"Pari obosit(ă). Începe cu un pas mic și o sesiune de focus scurtă.",
-          "😣":"Pari copleșit(ă). Prioritizează o singură acțiune și cere coach-ului un plan simplu.",
-          "🔥":"Ai energie bună. Este un moment potrivit pentru quiz și o misiune rapidă."
-        },
-        en:{
-          "🙂":"Calm state detected. You can continue with a path or a short quiz.",
-          "😕":"You seem tired. Start with one small step and a short focus session.",
-          "😣":"You seem overwhelmed. Prioritize one action and ask the coach for a simple plan.",
-          "🔥":"You have strong momentum. This is a good moment for a quiz and a quick mission."
-        }
-      };
-      moodResponse.textContent = map[state.lang][state.mood];
-      document.querySelectorAll('.mood-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mood === state.mood);
+    function profileApply(name){
+      state.profile = name;
+      document.querySelectorAll('.profile').forEach(card=>card.classList.toggle('active', card.dataset.profile===name));
+      if(name==='calm'){state.theme='dark';state.contrast='normal';state.fontSize=104;state.reducedMotion=false;state.focusAssist=true;}
+      if(name==='focus'){state.theme='dark';state.contrast='high';state.fontSize=110;state.reducedMotion=false;state.focusAssist=true;}
+      if(name==='reduced'){state.theme='dark';state.contrast='normal';state.fontSize=106;state.reducedMotion=true;state.focusAssist=true;}
+      applyTheme(); applyA11y(); updateStats(); renderSummary();
+    }
+    function renderTasks(forceLang=false){
+      if(forceLang){ state.tasks = state.tasks.map((item,i)=>({...item,text:taskSeeds[state.lang][i]||item.text})); }
+      ids('taskList').innerHTML='';
+      state.tasks.forEach(task=>{
+        const label=document.createElement('label'); label.className='task'+(task.done?' done':'');
+        label.innerHTML=`<div style="display:flex;align-items:center;gap:10px"><input type="checkbox" ${task.done?'checked':''}><span class="txt">${task.text}</span></div><span class="tag">+5 XP</span>`;
+        const check=label.querySelector('input');
+        check.addEventListener('change',()=>{task.done=check.checked; label.classList.toggle('done',task.done); updateStats(); renderSummary();});
+        ids('taskList').appendChild(label);
       });
     }
-
-    function defaultCoachReply(){
-      return state.lang === 'ro'
-        ? "Începe cu un pas mic și clar. Alege o acțiune sub 10 minute, fă-o, apoi revino pentru următorul pas."
-        : "Start with one small and clear step. Choose an action under 10 minutes, do it, then return for the next step.";
+    function rewardTasks(){
+      const completed = state.tasks.filter(t=>t.done).length;
+      ids('missionNote').textContent = completed
+        ? (state.lang==='ro' ? `Ai primit ${completed*5} XP pentru ${completed} taskuri finalizate.` : `You received ${completed*5} XP for ${completed} completed tasks.`)
+        : (state.lang==='ro' ? 'Mai întâi bifează cel puțin un task.' : 'First check at least one task.');
+      if(completed){ state.xp += completed*5; state.missions += completed; updateStats(); renderSummary(); }
     }
-
-    function calmCoachReply(){
-      return state.lang === 'ro'
-        ? "Respiră lent. Nu trebuie să rezolvi tot acum. Alege o singură acțiune și trateaz-o ca pe singurul obiectiv al momentului."
-        : "Breathe slowly. You do not need to solve everything now. Choose one action and treat it as the only goal for this moment.";
+    function resetTasksFn(){ state.tasks = taskSeeds[state.lang].map((text,i)=>({id:i+1,text,done:false})); renderTasks(); updateStats(); renderSummary(); }
+    function renderSummary(){
+      const done = state.tasks.filter(t=>t.done).length;
+      ids('summaryBox').textContent = state.lang==='ro'
+        ? `Profil activ: ${state.profile}. Mood: ${state.mood}. Taskuri bifate: ${done}/${state.tasks.length}. XP total: ${state.xp}.`
+        : `Active profile: ${state.profile}. Mood: ${state.mood}. Checked tasks: ${done}/${state.tasks.length}. Total XP: ${state.xp}.`;
     }
-
-    function planCoachReply(){
-      return state.lang === 'ro'
-        ? "Plan în 3 pași: 1) definește următoarea acțiune, 2) setează 5-10 minute, 3) marchează finalizarea și fă o pauză scurtă."
-        : "3-step plan: 1) define the next action, 2) set 5-10 minutes, 3) mark it complete and take a short break.";
+    function coachReply(text){
+      const t=text.toLowerCase();
+      if(/bloc|stres|panic|copleș|overwhelm|stress|panic|block/.test(t)) return state.lang==='ro' ? 'Hai să reducem totul la minim. 1) oprește-te 30 de secunde, 2) alege o singură sarcină, 3) fă doar începutul ei pentru 5 minute.' : 'Let’s reduce everything to the minimum. 1) pause for 30 seconds, 2) choose one task, 3) do only its beginning for 5 minutes.';
+      if(/rutin|diminea|zi|routine|morning|day/.test(t)) return state.lang==='ro' ? 'Rutină blândă: check-in de 1 minut, 10 minute focus, pauză scurtă, apoi un singur task mic.' : 'Gentle routine: 1-minute check-in, 10 minutes of focus, short break, then one small task.';
+      if(/quiz|studi|învăț|learn|study|quiz/.test(t)) return state.lang==='ro' ? 'Plan de studiu: 1) subiect mic, 2) 5 minute citit, 3) un răspuns sau quiz, 4) recap într-o propoziție.' : 'Study plan: 1) one small topic, 2) read for 5 minutes, 3) answer one question or do a quiz, 4) end with a one-sentence recap.';
+      return state.lang==='ro' ? 'Începe cu un pas mic și clar. Alege o acțiune sub 10 minute, fă-o, apoi revino pentru următorul pas.' : 'Start with one small and clear step. Choose an action under 10 minutes, do it, then return for the next step.';
     }
-
-    function generateCoachReply(text){
-      const t = text.toLowerCase();
-      if(/bloc|stres|panic|copleș|overwhelm|panic|stress|block/.test(t)){
-        return state.lang === 'ro'
-          ? "Hai să reducem totul la minim. 1) oprește-te 30 de secunde, 2) alege o singură sarcină, 3) fă doar începutul ei pentru 5 minute."
-          : "Let's reduce everything to the minimum. 1) pause for 30 seconds, 2) choose one single task, 3) do only the beginning of it for 5 minutes.";
-      }
-      if(/rutin|diminea|zi|routine|morning|day/.test(t)){
-        return state.lang === 'ro'
-          ? "Rutină blândă: check-in de 1 minut, 10 minute focus, apă sau pauză scurtă, apoi un singur task mic."
-          : "Gentle routine: 1-minute check-in, 10 minutes of focus, water or a short break, then one small task.";
-      }
-      if(/quiz|studi|învăț|bac|learn|study|quiz/.test(t)){
-        return state.lang === 'ro'
-          ? "Plan de studiu: 1) subiect mic, 2) 5 minute citit, 3) un răspuns sau quiz, 4) recap într-o propoziție."
-          : "Study plan: 1) one small topic, 2) read for 5 minutes, 3) answer one question or do a quiz, 4) end with a one-sentence recap.";
-      }
-      return defaultCoachReply();
-    }
-
     function renderQuiz(){
-      const list = quizzes[state.lang];
-      const current = list[state.quizIndex];
-      quizQuestion.textContent = current.q;
-      quizMeta.textContent = state.lang === 'ro'
-        ? `Întrebare ${state.quizIndex + 1} din ${list.length}`
-        : `Question ${state.quizIndex + 1} of ${list.length}`;
-      quizCounter.textContent = `${state.quizIndex + 1} / ${list.length}`;
-      quizOptions.innerHTML = '';
-      current.options.forEach((opt, idx) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'quiz-option';
-        btn.setAttribute('aria-pressed', 'false');
-        btn.textContent = opt;
-        btn.addEventListener('click', () => selectQuizOption(idx));
-        quizOptions.appendChild(btn);
-      });
+      const q = quizzes[state.lang][state.quizIndex];
+      ids('quizQuestion').textContent=q.q; ids('quizMeta').textContent = state.lang==='ro' ? `Întrebare ${state.quizIndex+1} din 5` : `Question ${state.quizIndex+1} of 5`; ids('quizCounter').textContent = `${state.quizIndex+1} / 5`;
+      ids('quizOptions').innerHTML='';
+      q.o.forEach((opt,idx)=>{ const b=document.createElement('button'); b.className='quiz-option'; b.type='button'; b.setAttribute('aria-pressed','false'); b.textContent=opt; b.onclick=()=>selectOption(idx); ids('quizOptions').appendChild(b); });
+      if(!ids('quizFeedback').dataset.userSet) ids('quizFeedback').textContent=i18n[state.lang].quizInitial;
+    }
+    function selectOption(idx){
+      const q=quizzes[state.lang][state.quizIndex];
+      [...ids('quizOptions').children].forEach((b,i)=>b.setAttribute('aria-pressed', i===idx ? 'true':'false'));
+      ids('quizFeedback').dataset.userSet='1';
+      if(idx===q.c){ ids('quizFeedback').textContent=q.good; state.quizScore=Math.min(5,state.quizScore+1); state.xp+=10; } else ids('quizFeedback').textContent=q.bad;
+      updateStats(); renderSummary();
+    }
+    function activateTab(name){
+      document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.toggle('active', btn.dataset.tab===name));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active', p.dataset.panel===name));
     }
 
-    function selectQuizOption(index){
-      const list = quizzes[state.lang];
-      const current = list[state.quizIndex];
-      [...quizOptions.children].forEach((btn, idx) => {
-        btn.setAttribute('aria-pressed', idx === index ? 'true' : 'false');
-      });
-      if(index === current.correct){
-        quizFeedback.textContent = current.feedbackCorrect;
-        state.quizScore = Math.min(3, state.quizScore + 1);
-        state.xp += 10;
-      } else {
-        quizFeedback.textContent = current.feedbackWrong;
-      }
-      updateStats();
+    let timerSec=20*60, timerInt=null;
+    function renderTimer(){ const m=String(Math.floor(timerSec/60)).padStart(2,'0'), s=String(timerSec%60).padStart(2,'0'); ids('timerDisplay').textContent=`${m}:${s}`; }
+
+    ids('langBtn').onclick=()=>{ state.lang=state.lang==='ro'?'en':'ro'; setLang(); updateStats(); };
+    ids('themeBtn').onclick=()=>{ state.theme=state.theme==='dark'?'light':'dark'; applyTheme(); updateStats(); };
+    ids('openOb').onclick=()=> ids('overlay').hidden=false;
+    ids('closeOb').onclick=()=>{ ids('overlay').hidden=true; state.onboardingSeen=true; localStorage.setItem('aac_flag_onboarding','done'); };
+    ids('prevOb').onclick=()=>{ state.onboardingIndex=Math.max(0,state.onboardingIndex-1); renderOnboarding(); };
+    ids('nextOb').onclick=()=>{ if(state.onboardingIndex===onboarding[state.lang].length-1){ ids('closeOb').click(); } else { state.onboardingIndex++; renderOnboarding(); } };
+    ids('contrastToggle').onchange=()=>{ state.contrast=ids('contrastToggle').checked?'high':'normal'; applyA11y(); updateStats(); };
+    ids('motionToggle').onchange=()=>{ state.reducedMotion=ids('motionToggle').checked; applyA11y(); updateStats(); };
+    ids('focusToggle').onchange=()=>{ state.focusAssist=ids('focusToggle').checked; applyA11y(); updateStats(); };
+    ids('fontSize').oninput=()=>{ state.fontSize=Number(ids('fontSize').value); applyA11y(); updateStats(); };
+    document.querySelectorAll('.applyProfile').forEach(b=>b.onclick=()=>profileApply(b.dataset.profile));
+    ids('applyCalm').onclick=()=>profileApply('calm'); ids('applyFocus').onclick=()=>profileApply('focus'); ids('applyReduced').onclick=()=>profileApply('reduced');
+    document.querySelectorAll('.tab-btn').forEach(b=>b.onclick=()=>activateTab(b.dataset.tab));
+    document.querySelectorAll('.addXp').forEach(b=>b.onclick=()=>{ state.xp+=Number(b.dataset.xp||10); state.missions+=1; updateStats(); renderSummary(); });
+    document.querySelectorAll('.coachFill').forEach(b=>b.onclick=()=>{ ids('coachInput').value = state.lang==='ro' ? b.dataset.ro : b.dataset.en; activateTab('coach'); ids('coachInput').focus(); });
+    ids('coachSend').onclick=()=>{ ids('coachResponse').textContent=coachReply(ids('coachInput').value.trim()); ids('coachResponse').dataset.userGenerated='1'; };
+    ids('coachCalm').onclick=()=>{ ids('coachResponse').textContent = state.lang==='ro' ? 'Respiră lent. Nu trebuie să rezolvi tot acum. Alege o singură acțiune.' : 'Breathe slowly. You do not need to solve everything now. Choose one action.'; ids('coachResponse').dataset.userGenerated='1'; };
+    ids('coachPlan').onclick=()=>{ ids('coachResponse').textContent = state.lang==='ro' ? 'Plan în 3 pași: 1) definește următoarea acțiune, 2) setează 5-10 minute, 3) marchează finalizarea și fă o pauză.' : '3-step plan: 1) define the next action, 2) set 5-10 minutes, 3) mark it complete and take a break.'; ids('coachResponse').dataset.userGenerated='1'; };
+    ids('quizNext').onclick=()=>{ state.quizIndex=(state.quizIndex+1)%5; delete ids('quizFeedback').dataset.userSet; renderQuiz(); updateStats(); };
+    ids('quizReset').onclick=()=>{ state.quizIndex=0; state.quizScore=0; delete ids('quizFeedback').dataset.userSet; renderQuiz(); updateStats(); renderSummary(); };
+    ids('rewardBtn').onclick=rewardTasks; ids('resetTasks').onclick=resetTasksFn; ids('refreshSummary').onclick=renderSummary;
+    ids('startTimer').onclick=()=>{ if(timerInt) return; ids('timerState').textContent = state.lang==='ro' ? 'Rulează' : 'Running'; timerInt=setInterval(()=>{ timerSec--; renderTimer(); if(timerSec<=0){ clearInterval(timerInt); timerInt=null; timerSec=0; renderTimer(); ids('timerState').textContent = state.lang==='ro' ? 'Finalizat' : 'Done'; state.xp+=15; state.missions+=1; updateStats(); renderSummary(); } },1000); };
+    ids('pauseTimer').onclick=()=>{ if(timerInt){ clearInterval(timerInt); timerInt=null; } ids('timerState').textContent = state.lang==='ro' ? 'Pauză' : 'Paused'; };
+    ids('resetTimer').onclick=()=>{ if(timerInt){ clearInterval(timerInt); timerInt=null; } timerSec=20*60; renderTimer(); ids('timerState').textContent=i18n[state.lang].quickTag; };
+
+
+    let scratchSequence = [];
+
+    function colorForTone(tone, idx){
+      const palettes = {
+        calm: ['#6ea8ff','#8b5cf6','#25d0ab'],
+        focus: ['#25d0ab','#6ea8ff','#ffffff'],
+        energy: ['#ffbf69','#ff7c90','#8b5cf6']
+      };
+      return palettes[tone][idx % palettes[tone].length];
     }
 
-    function nextQuiz(){
-      const list = quizzes[state.lang];
-      state.quizIndex = (state.quizIndex + 1) % list.length;
-      renderQuiz();
-      quizFeedback.textContent = i18n[state.lang].quizInitial;
-      updateStats();
-    }
-
-    function resetQuizState(){
-      state.quizIndex = 0;
-      state.quizScore = 0;
-      renderQuiz();
-      quizFeedback.textContent = i18n[state.lang].quizInitial;
-      updateStats();
-    }
-
-    function renderTimer(){
-      const m = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
-      const s = String(timerSeconds % 60).padStart(2, '0');
-      timerDisplay.textContent = `${m}:${s}`;
-    }
-
-    langToggle.addEventListener('click', () => {
-      state.lang = state.lang === 'ro' ? 'en' : 'ro';
-      applyI18n();
-      updateStats();
+    document.querySelectorAll('.mandalaMood').forEach(btn=>{
+      btn.onclick = ()=>{
+        const tone = btn.dataset.tone;
+        ids('mandalaNote').textContent = mandalaTones[state.lang][tone];
+        document.querySelectorAll('.mandala-node').forEach((node, idx)=>{
+          node.setAttribute('fill', colorForTone(tone, idx));
+          node.setAttribute('opacity', '0.92');
+        });
+      };
     });
 
-    themeToggle.addEventListener('click', () => {
-      state.theme = state.theme === 'dark' ? 'light' : 'dark';
-      applyTheme();
-      updateStats();
-    });
-
-    onboardingToggle.addEventListener('click', openOnboarding);
-    closeOnboarding.addEventListener('click', closeOnboardingModal);
-    prevOnboarding.addEventListener('click', () => {
-      state.onboardingIndex = Math.max(0, state.onboardingIndex - 1);
-      renderOnboarding();
-    });
-    nextOnboarding.addEventListener('click', () => {
-      const last = onboardingSteps[state.lang].length - 1;
-      if(state.onboardingIndex >= last){
-        closeOnboardingModal();
-      } else {
-        state.onboardingIndex += 1;
-        renderOnboarding();
-      }
-    });
-
-    contrastToggle.addEventListener('change', () => {
-      state.contrast = contrastToggle.checked ? 'high' : 'normal';
-      applyContrast();
-      updateStats();
-    });
-    motionToggle.addEventListener('change', () => {
-      state.reducedMotion = motionToggle.checked;
-      applyMotion();
-      updateStats();
-    });
-    focusToggle.addEventListener('change', () => {
-      state.focusAssist = focusToggle.checked;
-      applyFocus();
-      updateStats();
-    });
-    fontSize.addEventListener('input', () => {
-      state.fontSize = Number(fontSize.value);
-      applyFont();
-      updateStats();
-    });
-
-    document.querySelectorAll('.mood-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.mood = btn.dataset.mood;
-        renderMoodMessage();
-        updateStats();
+    document.querySelectorAll('.mandala-node').forEach((node, idx)=>{
+      node.addEventListener('click', ()=>{
+        const current = node.getAttribute('fill');
+        const fills = ['rgba(255,255,255,.08)', '#6ea8ff', '#8b5cf6', '#25d0ab', '#ffbf69'];
+        const next = fills[(fills.indexOf(current) + 1) % fills.length];
+        node.setAttribute('fill', next);
       });
     });
 
-    document.querySelectorAll('.add-xp').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.xp += Number(btn.dataset.xp || 10);
-        state.missions += 1;
-        if(state.missions % 3 === 0) state.streak += 1;
-        updateStats();
+    ids('mandalaReset').onclick = ()=>{
+      document.querySelectorAll('.mandala-node').forEach(node=>{
+        node.setAttribute('fill', 'rgba(255,255,255,.08)');
       });
+      ids('mandalaNote').textContent = state.lang === 'ro'
+        ? 'Alege un ton, apoi folosește cercurile ca exercițiu vizual lent. Modul nu cere precizie perfectă, ci ritm calm.'
+        : 'Choose a tone, then use the circles as a slow visual exercise. The module does not require perfect precision, only calm rhythm.';
+    };
+
+    document.querySelectorAll('.scratchPrompt').forEach(btn=>{
+      btn.onclick = ()=>{
+        ids('scratchPromptBox').textContent = scratchIdeas[state.lang][btn.dataset.type];
+      };
     });
 
-    document.querySelectorAll('.coach-fill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        coachInput.value = state.lang === 'ro' ? btn.dataset.messageRo : btn.dataset.messageEn;
-        coachInput.focus();
-      });
+    document.querySelectorAll('.scratchBlock').forEach(btn=>{
+      btn.onclick = ()=>{
+        scratchSequence.push(btn.dataset.block);
+        ids('scratchSequence').textContent = (state.lang === 'ro' ? 'Flow: ' : 'Flow: ') + scratchSequence.join(' → ');
+      };
     });
 
-    coachSend.addEventListener('click', () => {
-      coachResponse.textContent = generateCoachReply(coachInput.value.trim());
-      coachResponse.dataset.userGenerated = 'true';
-    });
-    coachCalm.addEventListener('click', () => {
-      coachResponse.textContent = calmCoachReply();
-      coachResponse.dataset.userGenerated = 'true';
-    });
-    coachPlan.addEventListener('click', () => {
-      coachResponse.textContent = planCoachReply();
-      coachResponse.dataset.userGenerated = 'true';
-    });
+    ids('scratchReset').onclick = ()=>{
+      scratchSequence = [];
+      ids('scratchSequence').textContent = state.lang === 'ro' ? 'Flow: —' : 'Flow: —';
+    };
 
-    quizNext.addEventListener('click', nextQuiz);
-    quizReset.addEventListener('click', resetQuizState);
 
-    startTimer.addEventListener('click', () => {
-      if(timerInterval) return;
-      timerState.textContent = state.lang === 'ro' ? 'Rulează' : 'Running';
-      timerInterval = setInterval(() => {
-        timerSeconds -= 1;
-        renderTimer();
-        if(timerSeconds <= 0){
-          clearInterval(timerInterval);
-          timerInterval = null;
-          timerSeconds = 0;
-          renderTimer();
-          timerState.textContent = state.lang === 'ro' ? 'Finalizat' : 'Done';
-          state.xp += 15;
-          state.missions += 1;
-          updateStats();
-        }
-      }, 1000);
-    });
-    pauseTimer.addEventListener('click', () => {
-      if(timerInterval){
-        clearInterval(timerInterval);
-        timerInterval = null;
-      }
-      timerState.textContent = state.lang === 'ro' ? 'Pauză' : 'Paused';
-    });
-    resetTimer.addEventListener('click', () => {
-      if(timerInterval){
-        clearInterval(timerInterval);
-        timerInterval = null;
-      }
-      timerSeconds = 20 * 60;
-      renderTimer();
-      timerState.textContent = i18n[state.lang].timerReady;
-    });
-
-    applyI18n();
-    applyTheme();
-    applyContrast();
-    applyFont();
-    applyMotion();
-    applyFocus();
-    updateStats();
-    renderQuiz();
-    renderTimer();
-    renderMoodMessage();
-
-    if(!state.onboardingSeen){
-      openOnboarding();
-    }
+    ensureTasks(); applyTheme(); applyA11y(); setLang(); updateStats(); renderTasks(); renderSummary(); renderTimer(); activateTab('tasks');
+    if(!state.onboardingSeen){ ids('overlay').hidden=false; }
   </script>
 </body>
 </html>
